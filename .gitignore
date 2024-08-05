@@ -1,0 +1,15 @@
+dist/
+local_cache/
+node_modules/
+.env
+*.log
+data/
+*.bin
+/bot_sessions
+*.png
+*.bk
+*.gz
+*.qr.png
+*embedding
+*app.*
+*.tgz
