@@ -89,7 +89,7 @@ const main = async () => {
     const adapterFlow = createFlow([aiflow])
 
     const adapterProvider = createProvider(Provider, {
-        token:"7196484074:AAGDO759HT38Pqt8CNFbQKiW616-dzqqKK0"
+        token:"7413703587:AAE44YwXighBXJSPjFj8J3ZjpET8MW8uRkI"
     })
     adapterProvider.on('message', (ctx) => console.log('new message', ctx.body))
     const adapterDB = new Database()
