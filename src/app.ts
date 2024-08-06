@@ -4,12 +4,12 @@ import { createBot, createProvider, createFlow, EVENTS } from '@builderbot/bot'
 import { MemoryDB as Database } from '@builderbot/bot'
 import { TelegramProvider as Provider } from "@builderbot-plugins/telegram"
 
+import { LanceDB}  from "@langchain/community/vectorstores/lancedb";
 import z from "zod"
 import { createAIFlow } from "./index"
-import StoreManager from "./ai/stores/StoreManager"
 import { OramaClient } from '@oramacloud/client'
-import { Product } from "./types"
-import { typing } from "./utils/presence"
+import { typing } from "./utils/presence"  
+import StoreManager from "./ai/stores/storeManager";
 
 
 const client = new OramaClient({
@@ -47,32 +47,15 @@ const aiflow = createAIFlow
             console.log({ details: ctx?.context })
         }
     )
-    .setStore(
-    {
-        searchFn: async (term) => {
-            console.log({ term })
-
-            const lanceClient =  await StoreManager.init()
-
-            const  hits  = await lanceClient.similaritySearch(term)
-            const products = hits.map(hit => hit.pageContent) as string[]
-
-            const mapProducts = products.map((
-                titulo
-            ) => ({
-                titulo: titulo,
-
-            }))
-
-            return mapProducts
-        }
+    .setStore({
+        conf:{urlOrPath:"./data", schema:[], store:new LanceDB},
     })
     .createRunnable({
         answerSchema: z.object({
             answer: z
                 .string()
                 .describe('use the provided context to reply')
-        }).describe('El formato de respuesta debe ser el siguiente')
+        }).describe('You are a helpful nerd')
     }, {
         onFailure: (err) => {
             console.log({ err })

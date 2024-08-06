@@ -1,10 +1,8 @@
 import { FastEmbedding } from "@builderbot-plugins/fast-embedding";
 import { LanceDB } from "@langchain/community/vectorstores/lancedb";
-import { Table, connect } from "vectordb";
-import { loadFile } from "../loaders";
+import { loadFile } from "../../utils/loaders";
 import { Document } from "@langchain/core/documents";
 import * as lancedb from "@lancedb/lancedb";
-import * as arrow from "apache-arrow";
 
 
 
@@ -15,7 +13,7 @@ export default class StoreManager {
         const uri = "data/sample-lancedb";
         const db = await lancedb.connect(uri);
         //const db = await connect(`./${tableName}.db`);
-        let table: Table
+        let table: lancedb.Table
         let vectorStore: LanceDB
 
         try {
