@@ -30,7 +30,7 @@ export type ModelArgs = {
 export type Store = {
   conf: {
     urlOrPath: string,
-    schema: string[],
+    schema?: string[],
     store?: VectorStore,
     embeddings?: Embeddings,
     httpConf?: AxiosRequestConfig,

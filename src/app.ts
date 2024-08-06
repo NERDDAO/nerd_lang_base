@@ -4,12 +4,13 @@ import { createBot, createProvider, createFlow, EVENTS } from '@builderbot/bot'
 import { MemoryDB as Database } from '@builderbot/bot'
 import { TelegramProvider as Provider } from "@builderbot-plugins/telegram"
 
-import { LanceDB}  from "@langchain/community/vectorstores/lancedb";
+import { LanceDB } from "@langchain/community/vectorstores/lancedb";
 import z from "zod"
 import { createAIFlow } from "./index"
 import { OramaClient } from '@oramacloud/client'
-import { typing } from "./utils/presence"  
+import { typing } from "./utils/presence"
 import StoreManager from "./ai/stores/storeManager";
+import { VectorStore } from "@langchain/core/vectorstores";
 
 
 const client = new OramaClient({
@@ -48,7 +49,9 @@ const aiflow = createAIFlow
         }
     )
     .setStore({
-        conf:{urlOrPath:"./data", schema:[], store:new LanceDB},
+        conf: {
+            urlOrPath: "files"
+        }
     })
     .createRunnable({
         answerSchema: z.object({
@@ -64,23 +67,22 @@ const aiflow = createAIFlow
     .pipe(({ addAction }) => {
 
         return addAction(async (ctx, { flowDynamic, state, provider }) => {
-                await typing(ctx, provider)
-                const response = state.get('answer')
-                const chunks = response.answer.split(/\n\n+/);
-                for (const chunk of chunks) {
-                    await flowDynamic([{ body: chunk.trim() }]);
-                }
-            })
+            await typing(ctx, provider)
+            const response = state.get('answer')
+            const chunks = response.answer.split(/\n\n+/);
+            for (const chunk of chunks) {
+                await flowDynamic([{ body: chunk.trim() }]);
+            }
+        })
     })
     .createFlow()
 
 const main = async () => {
-
-    const PORT =  3010
+    const PORT = 3010
     const adapterFlow = createFlow([aiflow])
 
     const adapterProvider = createProvider(Provider, {
-        token:"7196484074:AAGTeQUelgUtqf0EWtCz-CquOuJpYqLsQ_4"
+        token: "7196484074:AAGTeQUelgUtqf0EWtCz-CquOuJpYqLsQ_4"
     })
     adapterProvider.on('message', (ctx) => console.log('new message', ctx.body))
     const adapterDB = new Database()

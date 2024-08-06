@@ -16,6 +16,7 @@ import { FastEmbedding } from "@builderbot-plugins/fast-embedding"
 import { Embeddings } from "@langchain/core/embeddings";
 import { AxiosRequestConfig } from "axios";
 import { VectorStoreRetriever } from "@langchain/core/vectorstores";
+import { LanceDB } from "@langchain/community/vectorstores/lancedb";
 
 export default class StoreRetriever extends BaseRetriever {
     lc_namespace = ["langchain", "retrievers"];
@@ -49,7 +50,7 @@ export default class StoreRetriever extends BaseRetriever {
         const embeddings = this?.embeddings || new FastEmbedding('AllMiniLML6V2')
 
         if (!this.store) {
-            this.store = HNSWLib
+            this.store = LanceDB
         }
 
         if (!this.store?.fromDocuments || !this.store?.addDocuments) {
