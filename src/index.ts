@@ -32,7 +32,7 @@ class createAIFlow {
                 urlOrPath: store?.urlOrPath,
                 schema: store?.schema,
                 store: store?.store,
-                embbedgins: store?.embbedgins,
+                embeddings: store?.embeddings,
                 httpConf: store?.httpConf
             })
         }else {
@@ -87,7 +87,7 @@ class createAIFlow {
                     mapContext,
                     {
                         question: ctx.body,
-                        language: 'spanish',
+                        language: 'english',
                         history: await Memory.getMemory(state) || [],
                         format_instructions
                     },

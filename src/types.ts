@@ -32,7 +32,7 @@ export type Store = {
     urlOrPath: string,
     schema: string[],
     store?: VectorStore,
-    embbedgins?: Embeddings,
+    embeddings?: Embeddings,
     httpConf?: AxiosRequestConfig,
 }
 }

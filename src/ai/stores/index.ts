@@ -22,14 +22,14 @@ export default class StoreRetriever extends BaseRetriever {
     urlOrPath: string
     schema: string[]
     store?: any
-    embbedgins?: Embeddings
+    embeddings?: Embeddings
     httpConf?: AxiosRequestConfig
     constructor(
         private conf: {
             urlOrPath: string,
             schema: string[],
             store?: any,
-            embbedgins?: Embeddings,
+            embeddings?: Embeddings,
             httpConf?: AxiosRequestConfig,
         },
         fields?: BaseRetrieverInput
@@ -41,12 +41,12 @@ export default class StoreRetriever extends BaseRetriever {
         this.urlOrPath = this.conf?.urlOrPath
         this.schema = this.conf?.schema
         this.store = this.conf?.store
-        this.embbedgins = this.conf?.embbedgins
+        this.embeddings = this.conf?.embeddings
         this.httpConf = this.conf?.httpConf
     }
 
     private async ingest() {
-        const embeddings = this?.embbedgins || new FastEmbedding('AllMiniLML6V2')
+        const embeddings = this?.embeddings || new FastEmbedding('AllMiniLML6V2')
 
         if (!this.store) {
             this.store = HNSWLib
@@ -98,7 +98,7 @@ export default class StoreRetriever extends BaseRetriever {
 
     }
 
-    private async setStore(documents: any[], embbedgins?:any) {
+    private async setStore(documents: any[], embeddings?:any) {
 
         if (documents.length > 1000) {
             try {
@@ -108,7 +108,7 @@ export default class StoreRetriever extends BaseRetriever {
                 let vectorStore: VectorStoreRetriever<any>
 
                 if (this.store?.fromDocuments) {
-                    vectorStore = await this.store.fromDocuments(firts, embbedgins)
+                    vectorStore = await this.store.fromDocuments(firts, embeddings)
                 }else {
                     vectorStore = await this.store.addDocuments(documents)
                 }
@@ -128,7 +128,7 @@ export default class StoreRetriever extends BaseRetriever {
             }
         }
 
-        return await this.store.fromDocuments(documents, embbedgins)
+        return await this.store.fromDocuments(documents, embeddings)
     }
 
     async _getRelevantDocuments(

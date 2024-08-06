@@ -7,7 +7,7 @@ export default async <T>(question: string,
     try {
         const responseSchema = await model.createStructure({
             question,
-            language: 'spanish',
+            language: 'english',
             history: await Memory.getMemory(state, 4),
             format_instructions: new StructuredOutputParser(schema).getFormatInstructions()
         }, schema)

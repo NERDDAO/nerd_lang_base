@@ -6,21 +6,27 @@ import { TelegramProvider as Provider } from "@builderbot-plugins/telegram"
 
 import z from "zod"
 import { createAIFlow } from "./index"
-
+import StoreManager from "./ai/stores/StoreManager"
 import { OramaClient } from '@oramacloud/client'
 import { Product } from "./types"
 import { typing } from "./utils/presence"
+
 
 const client = new OramaClient({
     endpoint: 'https://cloud.orama.run/v1/indexes/videogames-awqnqs',
     api_key: 'GFwsfVcpqqmOEE65ty4Xc9ywC11fXpq1'
 })
+/*DB LOADER
+ *
+ * */
+
 
 const aiflow = createAIFlow
     .setKeyword(EVENTS.WELCOME)
     .setStructuredLayer(z.object({
-        intention: z.enum(['NERD']).describe(`La intención del cliente:
+        intention: z.enum(['NERD', 'NORMIE']).describe(`La intención del cliente:
             NERD: Si el cliente parece ser un nerd
+            NORMIE: Si no es una pregunta nerd
         
         `)
     }), async (ctx, { endFlow }) => {
@@ -29,7 +35,7 @@ const aiflow = createAIFlow
             const { intention } = ctx.schema
 
             if (intention !== 'NERD') {
-                return endFlow('Lo siento, Intenta preguntando sobre un producto')
+                return endFlow('Lo siento, Intenta ser mas nerd')
             }
         }
     })
@@ -41,12 +47,15 @@ const aiflow = createAIFlow
             console.log({ details: ctx?.context })
         }
     )
-    .setStore({
+    .setStore(
+    {
         searchFn: async (term) => {
             console.log({ term })
 
-            const { hits } = await client.search({ term, limit: 7 }) as any
-            const products = hits.map(hit => hit.document) as Product[]
+            const lanceClient =  await StoreManager.init()
+
+            const  hits  = await lanceClient.similaritySearch(term)
+            const products = hits.map(hit => hit.pageContent) as string[]
 
             const mapProducts = products.map((
                 titulo
@@ -62,17 +71,16 @@ const aiflow = createAIFlow
         answerSchema: z.object({
             answer: z
                 .string()
-                .describe('Agrega una respuesta breve y clara sobre la pregunta.')
+                .describe('use the provided context to reply')
         }).describe('El formato de respuesta debe ser el siguiente')
     }, {
         onFailure: (err) => {
             console.log({ err })
         }
     })
-    .pipe(({ addAnswer }) => {
+    .pipe(({ addAction }) => {
 
-        return addAnswer("Thinking")
-            .addAction(async (ctx, { flowDynamic, state, provider }) => {
+        return addAction(async (ctx, { flowDynamic, state, provider }) => {
                 await typing(ctx, provider)
                 const response = state.get('answer')
                 const chunks = response.answer.split(/\n\n+/);
@@ -89,7 +97,7 @@ const main = async () => {
     const adapterFlow = createFlow([aiflow])
 
     const adapterProvider = createProvider(Provider, {
-        token:"7196484074:AAGDO759HT38Pqt8CNFbQKiW616-dzqqKK0"
+        token:"7196484074:AAGTeQUelgUtqf0EWtCz-CquOuJpYqLsQ_4"
     })
     adapterProvider.on('message', (ctx) => console.log('new message', ctx.body))
     const adapterDB = new Database()
