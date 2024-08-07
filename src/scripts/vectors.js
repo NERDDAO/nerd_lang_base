@@ -11,12 +11,13 @@ import { PDFLoader } from "langchain/document_loaders/fs/pdf";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { ChromaClient } from 'chromadb'
-const client = new ChromaClient({
-	baseUrl: "http://provider.a6000.mon.obl.akash.pub:32709"
+import { FastEmbedding } from "@builderbot-plugins/fast-embedding";
+import { HuggingFaceInferenceEmbeddings } from "@langchain/community/embeddings/hf";
+
+const embeddings = new HuggingFaceInferenceEmbeddings({
+	apiKey: "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", // In Node.js defaults to process.env.HUGGINGFACEHUB_API_KEYconst client = new ChromaClient({
 });
-const collection = await client.getOrCreateCollection({
-	name: "my_collection",
-});
+
 
 const loader = new DirectoryLoader(
 	"./files",
@@ -34,21 +35,8 @@ const textSplitter = new RecursiveCharacterTextSplitter({
 	chunkOverlap: 200,
 });
 
-const splitDocs = textSplitter.map({ ids, docs });
+const splitDocs = await textSplitter.splitDocuments(docs);
 
-const embeddings = new OllamaEmbeddings({
-	model: "nomic-embed-text", // default value
-	baseUrl: "http://localhost:11434", // default value
-	requestOptions: {
-		useMMap: true,
-		numThread: 6,
-		numGpu: 1,
-	},
-});
-
-const vectorStore = await Chroma.fromDocuments(splitDocs, embeddings, {
-	collectionName: "state_of_the_union",
-});
 
 
 
@@ -56,16 +44,18 @@ const documents = ["Hello World!", "Bye Bye"];
 
 //const documentEmbeddings = await embeddings.embedDocuments(splitDocs);
 
-/* Create vector store and index the docs
+//Create vector store and index the docs
 const vectorStore = await Chroma.fromDocuments(splitDocs, embeddings, {
-	collectionName: "a-test-collection",
+	collectionName: "a-test-collection-3-2",
 	persist_directory: "./",
-	url: "http://provider.a6000.mon.obl.akash.pub:32709", // Optional, will default to this value
+	url: "http://provider.a6000.mon.obl.akash.pub:32635", // Optional, will default to this value
 	collectionMetadata: {
 		"hnsw:space": "cosine",
 	}, // Optional, can be used to specify the distance method of the embedding space https://docs.trychroma.com/usage-guide#changing-the-distance-function
 });
-*/
+/**/
+
+const query = await vectorStore.similaritySearchWithScore("foo")
 
 
-console.log(vectorStore);
+console.log(query);

@@ -3,28 +3,22 @@ import "dotenv/config"
 import { createBot, createProvider, createFlow, EVENTS } from '@builderbot/bot'
 import { MemoryDB as Database } from '@builderbot/bot'
 import { TelegramProvider as Provider } from "@builderbot-plugins/telegram"
-
 import { OllamaEmbeddings } from "@langchain/community/embeddings/ollama";
-import { LanceDB } from "@langchain/community/vectorstores/lancedb";
 import z from "zod"
 import { createAIFlow } from "./index"
-import { OramaClient } from '@oramacloud/client'
 import { typing } from "./utils/presence"
-import { connect } from "@lancedb/lancedb";
-import { loadFile } from "./utils/loaders";
-import StoreManager from "./ai/stores/storeManager";
-import { VectorStore } from "@langchain/core/vectorstores";
 import { Chroma } from "@langchain/community/vectorstores/chroma";
+import { FastEmbedding } from "@builderbot-plugins/fast-embedding";
+import { HuggingFaceInferenceEmbeddings } from "@langchain/community/embeddings/hf";
+
+const embeddings = new HuggingFaceInferenceEmbeddings({
+    apiKey: "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", // In Node.js defaults to process.env.HUGGINGFACEHUB_API_KEY
+});
 /*DB LOADER
  *
-const client = new OramaClient({
-    endpoint: 'https://cloud.orama.run/v1/indexes/videogames-awqnqs',
-    api_key: 'GFwsfVcpqqmOEE65ty4Xc9ywC11fXpq1'
+
 })
 
- * */
-import { ChromaClient } from 'chromadb'
-const client = new ChromaClient();
 
 
 const embeddings = new OllamaEmbeddings({
@@ -36,6 +30,7 @@ const embeddings = new OllamaEmbeddings({
         numGpu: 1,
     },
 })
+ * */
 
 
 const aiflow = createAIFlow
@@ -66,32 +61,16 @@ const aiflow = createAIFlow
     )
     .setStore({
         searchFn: async (term) => {
-            const docs = await loadFile("./files")
-            const collection = await client.getOrCreateCollection({
-                name: "my_collection",
-            });
+            //const docs = await loadFile("./files")
+
+            console.log({ term })
 
 
-            /*const results = await collection.query({
-                queryTexts: ["This is a query document about florida"], // Chroma will embed this for you
-                nResults: 2, // how many results to return
-            });*/
-
-            console.log({ term }, docs)
-            //const db = await connect("/tmp/db");
-            /*const table = await db.createTable("vectors", [
-                { vector: Array(768), text: "sample", source: "a" },
-            ]);*/
-
-            const vectorStore = await Chroma.fromDocuments(
-                docs,
+            const vectorStore = await Chroma.fromExistingCollection(
                 embeddings,
                 {
-                    collectionName: "a-test-collection",
-                    url: "http://provider.a6000.mon.obl.akash.pub:32709/", // Optional, will default to this value
-                    collectionMetadata: {
-                        "hnsw:space": "cosine",
-                    },
+                    collectionName: "a-test-collection-3-2",
+                    url: "http://provider.a6000.mon.obl.akash.pub:32635", // Optional, will default to this value
                 } // 
             )
             const resultOne = await vectorStore.similaritySearch(term, 5);
