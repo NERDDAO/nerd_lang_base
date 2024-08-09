@@ -3,42 +3,114 @@ import "dotenv/config"
 import { createBot, createProvider, createFlow, EVENTS } from '@builderbot/bot'
 import { MemoryDB as Database } from '@builderbot/bot'
 import { TelegramProvider as Provider } from "@builderbot-plugins/telegram"
-import { OllamaEmbeddings } from "@langchain/community/embeddings/ollama";
 import z from "zod"
 import { createAIFlow } from "./index"
 import { typing } from "./utils/presence"
 import { Chroma } from "@langchain/community/vectorstores/chroma";
-import { FastEmbedding } from "@builderbot-plugins/fast-embedding";
 import { HuggingFaceInferenceEmbeddings } from "@langchain/community/embeddings/hf";
+import * as rpgDiceRoller from '@dice-roller/rpg-dice-roller';
+import { JSONLoader } from "langchain/document_loaders/fs/json";
+import { TextLoader } from "langchain/document_loaders/fs/text"
 
 const embeddings = new HuggingFaceInferenceEmbeddings({
-    apiKey: "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", // In Node.js defaults to process.env.HUGGINGFACEHUB_API_KEY
+    apiKey: process.env.HUGGINGFACEHUB_API_KEY, // In Node.js defaults to process.env.HUGGINGFACEHUB_API_KEY
 });
-/*DB LOADER
- *
+/*FLOW DEFINITION*/
+const vectorStore = new Chroma(embeddings, {
+    collectionName: "a-test-collection-3-2",
+    url: "http://chroma:8000", // Optional, will default to this value
+});
 
-})
+//const roller = new rpgDiceRoller.DiceRoller()
+const dndFlow = createAIFlow
+    .setKeyword(["Raggy", "raggy", "Rag", "rag"])
+    .setStructuredLayer(z.object({
+        intention: z.enum(['NORMAL', 'REPORT']).describe(`query types:
+            NORMAL: Normal queries exploring the context
+            REPORT: Prompts requesting summaries or reports
+    `)
+    }), async (ctx, { flowDynamic, state, gotoFlow }) => {
+        console.log(ctx?.schema)
+        if (ctx?.schema) {
+            const { intention } = ctx.schema
+            if (intention == 'REPORT') {
+                //return gotoFlow(aiflow)
+            }
+        }
+    })
+    .setContextLayer(
+        z.object({
+            inference: z.string().describe('the current query intention'),
+            prompt: z.string().describe('a helper search prompt')
+        }),
+        async (ctx) => {
+            console.log({ details: ctx?.context })
+        }
+    )
+    .setStore({
+        searchFn: async (term) => {
+            console.log({ term })
+            const vectorStore = await Chroma.fromExistingCollection(
+                embeddings,
+                {
+                    collectionName: "a-test-collection-3-2",
+                    url: "http://chroma:8000", // Optional, will default to this value
+                } // 
+            )
+            const resultOne = await vectorStore.similaritySearch(term, 10);
+            return resultOne
+        }
+    })
+    .createRunnable({
+        answerSchema: z.object({
+            answer: z
+                .string()
+                .describe('A very nuanced answer')
+        }).describe('you are a helpful librarian engine, reply to the user query using the context to guide your answe')
+    }, {
+        onFailure: (err) => {
+            console.log({ err })
+        }
+    })
+    .pipe(({ addAction }) => {
+
+        return addAction(async (ctx, { flowDynamic, state, provider }) => {
+            await typing(ctx, provider)
+            const response = state.get('answer')
+            if (ctx?.schema) {
+                const { intention } = ctx.schema
+
+                const payload = {
+                    query: ctx.body,
+                    context: ctx.context,
+                    response: response.answer
+                }
+
+                const documents = [
+                    {
+                        pageContent: JSON.stringify(payload),
+                        metadata: ctx
+
+                    }
+                ]
+
+                const ids = await vectorStore.addDocuments(documents);
+                console.log(documents, ids)
+
+            }
+        })
+    })
+    .createFlow()
 
 
-
-const embeddings = new OllamaEmbeddings({
-    model: "nomic-embed-text", // default value
-    baseUrl: "http://0.0.0.0:11434", // default value
-    requestOptions: {
-        useMMap: true,
-        numThread: 6,
-        numGpu: 1,
-    },
-})
- * */
 
 
 const aiflow = createAIFlow
-    .setKeyword(EVENTS.WELCOME)
+    .setKeyword(["Nerdo"])
     .setStructuredLayer(z.object({
         intention: z.enum(['NERD', 'NORMIE']).describe(`La intención del cliente:
-            NERD: Si el cliente parece ser un nerd
-            NORMIE: Si no es una pregunta nerd
+            CONTEXT: query about the context
+            RELATIONS: Action resuqsts
         
         `)
     }), async (ctx, { endFlow }) => {
@@ -46,9 +118,7 @@ const aiflow = createAIFlow
         if (ctx?.schema) {
             const { intention } = ctx.schema
 
-            if (intention !== 'NERD') {
-                return endFlow('Lo siento, Intenta ser mas nerd')
-            }
+            console.log("NERDFLOW")
         }
     })
     .setContextLayer(
@@ -61,19 +131,15 @@ const aiflow = createAIFlow
     )
     .setStore({
         searchFn: async (term) => {
-            //const docs = await loadFile("./files")
-
             console.log({ term })
-
-
             const vectorStore = await Chroma.fromExistingCollection(
                 embeddings,
                 {
                     collectionName: "a-test-collection-3-2",
-                    url: "http://provider.a6000.mon.obl.akash.pub:32635", // Optional, will default to this value
+                    url: "http://chroma:8000", // Optional, will default to this value
                 } // 
             )
-            const resultOne = await vectorStore.similaritySearch(term, 5);
+            const resultOne = await vectorStore.similaritySearch(term, 10);
             return resultOne
         }
     })
@@ -81,14 +147,14 @@ const aiflow = createAIFlow
         answerSchema: z.object({
             answer: z
                 .string()
-                .describe('use the provided context to reply')
-        }).describe('You are a helpful nerd')
+                .describe('reply with a list of items exploring the promt and context')
+        }).describe('you maximize coordination of the semantic loads of of your noosphere')
     }, {
         onFailure: (err) => {
             console.log({ err })
         }
     })
-    .pipe(({ addAction }) => {
+    /*.pipe(({ addAction }) => {
 
         return addAction(async (ctx, { flowDynamic, state, provider }) => {
             await typing(ctx, provider)
@@ -98,15 +164,15 @@ const aiflow = createAIFlow
                 await flowDynamic([{ body: chunk.trim() }]);
             }
         })
-    })
+    })*/
     .createFlow()
 
 const main = async () => {
     const PORT = 3010
-    const adapterFlow = createFlow([aiflow])
+    const adapterFlow = createFlow([aiflow, dndFlow])
 
     const adapterProvider = createProvider(Provider, {
-        token: "7196484074:AAGTeQUelgUtqf0EWtCz-CquOuJpYqLsQ_4"
+        token: process.env.TELEGRAM_BOT_TOKEN
     })
     adapterProvider.on('message', (ctx) => console.log('new message', ctx.body))
     const adapterDB = new Database()

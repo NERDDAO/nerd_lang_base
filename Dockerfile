@@ -26,6 +26,8 @@ FROM builder as deploy
 COPY --from=builder /app/src ./src 
 COPY --from=builder /app/package.json /app/pnpm-lock.yaml ./
 COPY --from=builder /app/data ./data 
+COPY --from=builder /app/files ./files 
+COPY --from=builder /app/scripts ./scripts
 
 RUN npm cache clean --force && \
         pnpm install &&  pnpm run build && \

@@ -12,9 +12,9 @@ export const MODELS = {
     }),
     'openai': (args?: ModelArgs) => new ChatOpenAI({
         modelName: args?.modelName || 'meta-llama/Meta-Llama-3.1-8B-Instruct',
-        maxTokens: args?.maxOutputTokens || 2048,
+        maxTokens: args?.maxOutputTokens || 4048,
         openAIApiKey: args?.apikey || "nerdKey",
-        configuration: { baseURL: "http://provider.a6000.mon.obl.akash.pub:31431/v1" },
+        configuration: { baseURL: "http://vllm:8000/v1" },
         ...args
     }),
     'cloudflare': (args?: ModelArgs) => new ChatCloudflareWorkersAI({

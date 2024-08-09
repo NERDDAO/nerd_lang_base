@@ -9,6 +9,7 @@ import { StructLayer, TransformLayer } from "./layers";
 import { CustomRetriever } from "./ai/retrievers";
 import { BaseRetriever } from "@langchain/core/retrievers";
 import { StructuredOutputParser } from "langchain/output_parsers";
+import { typing } from "./utils/presence"
 
 import z from "zod"
 
@@ -35,21 +36,21 @@ class createAIFlow {
                 embeddings: store?.embeddings,
                 httpConf: store?.httpConf
             })
-        }else {
+        } else {
             this.store = new CustomRetriever(args.searchFn, args?.fields)
         }
         return this
     }
 
     static setStructuredLayer = <T>(schema: ZodType<T, ZodTypeDef, T>, cb: (ctx: BotContext, methods: BotMethods) => Promise<void>, opts?: { capture: boolean, aiModel?: AiModel }) => {
-        
-        this.kwrd = this.kwrd.addAction({ capture: opts?.capture || false }, 
+
+        this.kwrd = this.kwrd.addAction({ capture: opts?.capture || false },
             new StructLayer(schema, opts?.aiModel).createCallback(cb))
         return this
     }
 
     static setContextLayer = <T>(schema: ZodType<T, ZodTypeDef, T>, cb: (ctx: BotContext, methods: BotMethods) => Promise<void>, opts?: { capture: boolean, aiModel?: AiModel }) => {
-        this.kwrd = this.kwrd.addAction({ capture: opts?.capture || false }, 
+        this.kwrd = this.kwrd.addAction({ capture: opts?.capture || false },
             new TransformLayer(schema, opts?.aiModel).createCallback(cb))
         return this
     }
@@ -72,17 +73,18 @@ class createAIFlow {
         const schema = opts?.answerSchema || z.object({ answer: z.string().describe('Answer as best possible') })
         const format_instructions = new StructuredOutputParser(schema).getFormatInstructions()
 
-        this.kwrd = this.kwrd.addAction(async (ctx, { state }) => {
+        this.kwrd = this.kwrd.addAction(async (ctx, { state, flowDynamic, provider }) => {
             try {
                 if (ctx?.context && typeof ctx.context === 'object') {
                     ctx.context = Object.values(ctx.context).join(' ')
-                }else if (Array.isArray(ctx.context)) {
+                } else if (Array.isArray(ctx.context)) {
                     ctx.context = ctx.context.join(' ')
                 }
+                await typing(ctx, provider)
 
                 const context = await contextual.invoke(ctx?.context || ctx.body)
                 const mapContext = context.map(doc => doc.pageContent).join('\n')
-                
+
                 const answer = await new Runnable(model.model, opts?.prompt).retriever(
                     mapContext,
                     {
@@ -94,7 +96,15 @@ class createAIFlow {
                     schema
                 )
 
+
                 Memory.memory({ user: ctx.body, assistant: JSON.stringify(answer) }, state)
+
+
+                console.log(answer)
+                const chunks = answer.answer.split(/\n\n+/);
+                for (const chunk of chunks) {
+                    await flowDynamic([{ body: chunk.trim() }]);
+                }
 
                 await state.update({ answer })
             } catch (error) {
@@ -103,7 +113,7 @@ class createAIFlow {
             }
 
         })
-        
+
         return this
     }
 
