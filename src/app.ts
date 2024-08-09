@@ -66,12 +66,25 @@ const dndFlow = createAIFlow
             answer: z
                 .string()
                 .describe('A very nuanced answer')
-        }).describe('you are a helpful librarian engine, reply to the user query using the context to guide your answe')
+        }).describe('You are a coordination agent, reply to the user query using the context to guide your answer. REFRAIN FROM REPEATING THE CONTEXT VERBATIM')
     }, {
         onFailure: (err) => {
             console.log({ err })
         }
     })
+    .setContextLayer(z.object({
+        haiku: z
+            .string()
+            .describe('a haiku exctracting the semantic payload of the context'),
+        eval: z
+            .number()
+            .describe("the quality of the provided context")
+
+    }).describe("haiku features three lines of five, seven, and five syllables, respectively. A haiku poem generally presents a single and concentrated image or emotion"),
+        async (ctx) => {
+            console.log({ details: ctx?.context })
+        }
+    )
     .pipe(({ addAction }) => {
 
         return addAction(async (ctx, { flowDynamic, state, provider }) => {
@@ -96,6 +109,9 @@ const dndFlow = createAIFlow
 
                 const ids = await vectorStore.addDocuments(documents);
                 console.log(documents, ids)
+                if (ctx.context.eval > 5) {
+                    flowDynamic("Interesting!")
+                }
 
             }
         })
