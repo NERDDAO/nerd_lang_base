@@ -78,7 +78,7 @@ const dndFlow = createAIFlow
             .describe('a haiku exctracting the semantic payload of the context'),
         eval: z
             .number()
-            .describe("the quality of the provided context")
+            .describe("the quality of the provided context use numbers from 1 to 10")
 
     }).describe("haiku features three lines of five, seven, and five syllables, respectively. A haiku poem generally presents a single and concentrated image or emotion"),
         async (ctx) => {
@@ -107,10 +107,12 @@ const dndFlow = createAIFlow
                     }
                 ]
 
-                const ids = await vectorStore.addDocuments(documents);
-                console.log(documents, ids)
+
                 if (ctx.context.eval > 5) {
                     flowDynamic("Interesting!")
+                    const ids = await vectorStore.addDocuments(documents);
+
+                    console.log(documents, ids)
                 }
 
             }
