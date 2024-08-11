@@ -8,9 +8,53 @@ import { createAIFlow } from "./index"
 import { typing } from "./utils/presence"
 import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { HuggingFaceInferenceEmbeddings } from "@langchain/community/embeddings/hf";
+import { Wallet, getDefaultProvider } from "ethers";
 import * as rpgDiceRoller from '@dice-roller/rpg-dice-roller';
 import { JSONLoader } from "langchain/document_loaders/fs/json";
 import { TextLoader } from "langchain/document_loaders/fs/text"
+import { Database as TablelandDB } from "@tableland/sdk";
+
+
+/* TBLAND CONFIG
+ */
+const pkey = process.env.BOT_PKEY;
+
+const wallet = new Wallet(pkey)
+
+const provider = getDefaultProvider("https://public.stackup.sh/api/v1/node/base-sepolia	")
+
+const signer = wallet.connect(provider);
+
+const db = new TablelandDB({ signer });
+
+const createTable = async (prefix: string) => {
+    // This is the table's `prefix`--a custom table value prefixed as part of the table's name
+    const { meta: create } = await db
+        .prepare(`CREATE TABLE ${prefix} (id integer primary key, val text);`)
+        .run();
+    await create.txn?.wait();
+
+    // The table's `name` is in the format `{prefix}_{chainId}_{tableId}`
+    const tableName = create.txn?.names[0] ?? ""; // e.g., my_table_31337_2y
+    return tableName
+}
+
+const addToTable = async (tableName: string) => {
+    // Insert a row into the table
+    const { meta: insert } = await db
+        .prepare(`INSERT INTO ${tableName} (id, val) VALUES (?, ?);`)
+        .bind(0, "Bobby Tables")
+        .run();
+
+    // Wait for transaction finality
+    await insert.txn?.wait();
+}
+
+const readTable = async (tableName: string) => {
+    const { results } = await db.prepare(`SELECT * FROM ${tableName};`).all();
+    return results;
+}
+
 
 const embeddings = new HuggingFaceInferenceEmbeddings({
     apiKey: process.env.HUGGINGFACEHUB_API_KEY, // In Node.js defaults to process.env.HUGGINGFACEHUB_API_KEY
@@ -25,9 +69,10 @@ const vectorStore = new Chroma(embeddings, {
 const dndFlow = createAIFlow
     .setKeyword(["Raggy", "raggy", "Rag", "rag"])
     .setStructuredLayer(z.object({
-        intention: z.enum(['NORMAL', 'REPORT']).describe(`query types:
+        intention: z.enum(['NORMAL', 'REPORT', 'GENERATE']).describe(`query types:
             NORMAL: Normal queries exploring the context
             REPORT: Prompts requesting summaries or reports
+            GENERATE: Create new info based on the context
     `)
     }), async (ctx, { flowDynamic, state, gotoFlow }) => {
         console.log(ctx?.schema)
@@ -45,6 +90,7 @@ const dndFlow = createAIFlow
         }),
         async (ctx) => {
             console.log({ details: ctx?.context })
+            ctx.context.self = "Your SELF table"
         }
     )
     .setStore({
@@ -57,7 +103,7 @@ const dndFlow = createAIFlow
                     url: "http://chroma:8000", // Optional, will default to this value
                 } // 
             )
-            const resultOne = await vectorStore.similaritySearch(term, 10);
+            const resultOne = await vectorStore.similaritySearch(term, 15);
             return resultOne
         }
     })
@@ -65,8 +111,8 @@ const dndFlow = createAIFlow
         answerSchema: z.object({
             answer: z
                 .string()
-                .describe('A very nuanced answer')
-        }).describe('You are a coordination agent, reply to the user query using the context to guide your answer. REFRAIN FROM REPEATING THE CONTEXT VERBATIM')
+                .describe('A very nuanced answer. REFRAIN FROM REPEATING THE CONTEXT DIRECLY')
+        }).describe('You are a coordination agent, reply to the user query using the context to guide your answer. ')
     }, {
         onFailure: (err) => {
             console.log({ err })
@@ -91,9 +137,8 @@ const dndFlow = createAIFlow
             await typing(ctx, provider)
             const response = state.get('answer')
             if (ctx?.schema) {
-                const { intention } = ctx.schema
-
                 const payload = {
+                    time: Date.now(),
                     query: ctx.body,
                     context: ctx.context,
                     response: response.answer

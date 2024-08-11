@@ -22,19 +22,22 @@ importers:
         version: 2.8.0
       '@langchain/cloudflare':
         specifier: ^0.0.4
-        version: 0.0.4(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
+        version: 0.0.4(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0)
       '@langchain/community':
         specifier: ^0.0.47
-        version: 0.0.47(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(hnswlib-node@3.0.0)(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(lodash@4.17.21)(openai@4.54.0)
+        version: 0.0.47(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(hnswlib-node@3.0.0)(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(lodash@4.17.21)(openai@4.54.0)(ws@8.17.1)
       '@langchain/core':
         specifier: ^0.1.57
-        version: 0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
+        version: 0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0)
       '@langchain/google-genai':
         specifier: ^0.0.11
-        version: 0.0.11(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
+        version: 0.0.11(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0)
       '@langchain/openai':
         specifier: ^0.0.28
-        version: 0.0.28(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))
+        version: 0.0.28(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))
+      '@tableland/sdk':
+        specifier: ^7.2.1
+        version: 7.2.1
       '@xenova/transformers':
         specifier: ^2.17.2
         version: 2.17.2
@@ -50,12 +53,15 @@ importers:
       dotenv:
         specifier: ^16.4.5
         version: 16.4.5
+      ethers:
+        specifier: ^6.13.2
+        version: 6.13.2
       hnswlib-node:
         specifier: ^3.0.0
         version: 3.0.0
       langchain:
         specifier: ^0.1.33
-        version: 0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)
+        version: 0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1)
       pdf-parse:
         specifier: ^1.1.1
         version: 1.1.1
@@ -105,6 +111,9 @@ importers:
 
 packages:
 
+  '@adraffy/ens-normalize@1.10.1':
+    resolution: {integrity: sha512-96Z2IP3mYmF1Xg2cDm8f1gWGf/HUVedQ3FMifV4kG/PQ4yEP51xDtRAEfhVNt5f/uzpNkZHwWQuUcu6D6K+Ekw==}
+
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
@@ -136,6 +145,18 @@ packages:
   '@arr/every@1.0.1':
     resolution: {integrity: sha512-UQFQ6SgyJ6LX42W8rHCs8KVc0JS0tzVL9ct4XYedJukskYVWTo49tNiMEK9C2HTyarbNiT/RVIRSY82vH+6sTg==}
     engines: {node: '>=4'}
+
+  '@async-generators/from-emitter@0.3.0':
+    resolution: {integrity: sha512-9ne/GfJfbw77wuA08WtuNIvMhpDwAEPT/GX/Dn33y/Bu1zKqO0bOWmcWTpLiHrO2vedEbW0GihfkG7EINEghsA==}
+    engines: {node: '>=9.0.0'}
+
+  '@async-generators/subject@0.4.0':
+    resolution: {integrity: sha512-ydMe58ouMupnJlvBq6SaG6ranw1uX6rcAfAVE37oNJLen9RJ1+sY6yju8xp6en8RwWn3gBtAx03ot1Ycr3U0QQ==}
+    engines: {node: '>=9.0.0'}
+
+  '@async-generators/terminator@0.4.0':
+    resolution: {integrity: sha512-Kj08FqHgdx4QZ1mwJrlN3L2MWNNWHHWSQezfClxMUvGU1pYjoRa/4Yev1U/2Y71aqDDXEYC7pr13HNv7Un7Kog==}
+    engines: {node: '>=9.0.0'}
 
   '@babel/code-frame@7.24.7':
     resolution: {integrity: sha512-BcYH1CVJBO9tvyIZ2jVeXgSIMvGZ2FDRvDdOIVQyuklNKSsx+eppDEBq/g47Ayw+RqNFE+URvOShmf+f/qwAlA==}
@@ -891,6 +912,13 @@ packages:
     resolution: {integrity: sha512-cXWgKE3sdWLSqAa8ykbCcUsUF1Kyr5J3HOWYGuobhPEycXW4WI++d5DhzdpL238mzoEXTi90VqfSCra37l5YqA==}
     engines: {node: '>=18'}
 
+  '@noble/curves@1.2.0':
+    resolution: {integrity: sha512-oYclrNgRaM9SsBUBVbb8M6DTV7ZHRTKugureoYEncY5c65HOmRzvSiTE3y5CYaPYJA/GVkrhXEoF0M3Ya9PMnw==}
+
+  '@noble/hashes@1.3.2':
+    resolution: {integrity: sha512-MVC8EAQp7MvEcm30KWENFjgR+Mkmf+D189XJTkFIlwohU5hcBbn1ZkKq7KVTi2Hme3PMGF390DaL52beVrIihQ==}
+    engines: {node: '>= 16'}
+
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -902,6 +930,9 @@ packages:
   '@nodelib/fs.walk@1.2.8':
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
+
+  '@openzeppelin/contracts@4.9.6':
+    resolution: {integrity: sha512-xSmezSupL+y9VkHZJGDoCBpmnB2ogM13ccaYDWqJTfS3dbuHkgjuwDFUmaFauBCboQMGB/S5UqUl2y54X99BmA==}
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -1060,6 +1091,16 @@ packages:
   '@sinonjs/fake-timers@10.3.0':
     resolution: {integrity: sha512-V4BG07kuYSUkTCSBHG8G8TNhM+F19jXFWnQtzj+we8DrkpSBCee9Z3Ms8yiGer/dlmhe35/Xdgyo3/0rQKg7YA==}
 
+  '@tableland/evm@6.3.0':
+    resolution: {integrity: sha512-29oTx7zCapMQkdqAzu7po6CONWO+17i+JmeoLHHXqUlNo9geL1RoutKYz0sQS7tlsK3Pcmgd2omZuFYqDPHb6A==}
+    engines: {node: '>=18.0.0'}
+
+  '@tableland/sdk@7.2.1':
+    resolution: {integrity: sha512-1dROnQcaEAwwHytkZDeyWeq0FHx9ehd1IXr9AhJRVLOWm90rbQCtxg+JtAkBD4fYF7kakUwRAlXnDBkSXxtwuQ==}
+
+  '@tableland/sqlparser@1.4.1':
+    resolution: {integrity: sha512-j8VTruuNm6WA+EuUKTHK4w1zinmsf0P0w9vTD8x8EzrUaXpIQx8/+51Kw2CqgyOhwaKbXrMUTycJbeWfXW5U0A==}
+
   '@telegraf/types@6.9.1':
     resolution: {integrity: sha512-bzqwhicZq401T0e09tu8b1KvGfJObPmzKU/iKCT5V466AsAZZWQrBYQ5edbmD1VZuHLEwopoOVY5wPP4HaLtug==}
 
@@ -1086,6 +1127,9 @@ packages:
 
   '@types/node-fetch@2.6.11':
     resolution: {integrity: sha512-24xFj9R5+rfQJLRyM56qh+wnVSYhyXC2tkoBndtY0U+vubqNsYXGjufB2nn8Q6gt0LrARwL6UBtMCSVCwl4B1g==}
+
+  '@types/node@18.15.13':
+    resolution: {integrity: sha512-N+0kuo9KgrUQ1Sn/ifDXsvg0TTleP7rIy4zOBGECxAljqvqfqpTfzx0Q1NUedOixRMBfe2Whhb056a42cWs26Q==}
 
   '@types/node@18.19.43':
     resolution: {integrity: sha512-Mw/YlgXnyJdEwLoFv2dpuJaDFriX+Pc+0qOBJ57jC1H6cDxIj2xc5yUrdtArDVG0m+KV6622a4p2tenEqB3C/g==}
@@ -1191,6 +1235,9 @@ packages:
     resolution: {integrity: sha512-tcpGyI9zbizT9JbV6oYE477V6mTlXvvi0T0G3SNIYE2apm/G5huBa1+K89VGeovbg+jycCrfhl3ADxErOuO6Jg==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+
+  aes-js@4.0.0-beta.5:
+    resolution: {integrity: sha512-G965FqalsNyrPqgEGON7nIx1e/OVENSgiEIzyC63haUMuvNnwIgIjMs52hlTCKhkBny7A2ORNlfY9Zu+jmGk1Q==}
 
   agentkeepalive@4.5.0:
     resolution: {integrity: sha512-5GG/5IbQQpC9FpkRGsSvZI5QYeSCzlJHdpBQntCsuTOxhKD8lqKhrleg2Yi7yvMIf82Ycmmqln9U8V9qwEiJew==}
@@ -1760,12 +1807,20 @@ packages:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
 
+  ethers@6.13.2:
+    resolution: {integrity: sha512-9VkriTTed+/27BGuY1s0hf441kqwHJ1wtN2edksEtiRvXx+soxRX3iSXTfFqq2+YwrOqbDoTHjIhQnjJRlzKmg==}
+    engines: {node: '>=14.0.0'}
+
   event-target-shim@5.0.1:
     resolution: {integrity: sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==}
     engines: {node: '>=6'}
 
   eventemitter3@4.0.7:
     resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
+
+  events@1.1.1:
+    resolution: {integrity: sha512-kEcvvCBByWXGnZy6JUlgAp2gBIUjfCAV6P6TgT1/aaQKcmuAEC4OZTV1I4EWQLz2gxZw76atuVyvHhTxvi0Flw==}
+    engines: {node: '>=0.4.x'}
 
   expand-template@2.0.3:
     resolution: {integrity: sha512-XYfuKMvj4O35f/pOXLObndIRvyQ+/+6AhODh+OKWj9S9498pHHn/IMszH+gt0fBCRWMNfk1ZSp5x3AifmnI2vg==}
@@ -2982,6 +3037,9 @@ packages:
     peerDependencies:
       typescript: '>=4.2.0'
 
+  tslib@2.4.0:
+    resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
+
   tslib@2.6.3:
     resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
 
@@ -3101,6 +3159,18 @@ packages:
     resolution: {integrity: sha512-7KxauUdBmSdWnmpaGFg+ppNjKF8uNLry8LyzjauQDOVONfFLNKrKvQOxZ/VuTIcS/gge/YNahf5RIIQWTSarlg==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
 
+  ws@8.17.1:
+    resolution: {integrity: sha512-6XQFvXTkbfUOZOKKILFG1PDK2NDQs4azKQl26T0YS5CxqWLgXajbPZ+h4gZekJyRqFU8pvnbAbbs/3TgRPy+GQ==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+
   yallist@3.1.1:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}
 
@@ -3125,6 +3195,8 @@ packages:
     resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
 
 snapshots:
+
+  '@adraffy/ens-normalize@1.10.1': {}
 
   '@ampproject/remapping@2.3.0':
     dependencies:
@@ -3161,6 +3233,18 @@ snapshots:
       '@anush008/tokenizers-win32-x64-msvc': 0.0.0
 
   '@arr/every@1.0.1': {}
+
+  '@async-generators/from-emitter@0.3.0':
+    dependencies:
+      '@async-generators/subject': 0.4.0
+      '@async-generators/terminator': 0.4.0
+
+  '@async-generators/subject@0.4.0':
+    dependencies:
+      '@async-generators/terminator': 0.4.0
+      events: 1.1.1
+
+  '@async-generators/terminator@0.4.0': {}
 
   '@babel/code-frame@7.24.7':
     dependencies:
@@ -3659,22 +3743,22 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@langchain/cloudflare@0.0.4(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)':
+  '@langchain/cloudflare@0.0.4(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0)':
     dependencies:
       '@cloudflare/ai': 1.2.2
-      '@langchain/core': 0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
+      '@langchain/core': 0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0)
       uuid: 9.0.1
     transitivePeerDependencies:
       - langchain
       - openai
 
-  '@langchain/community@0.0.47(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(hnswlib-node@3.0.0)(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(lodash@4.17.21)(openai@4.54.0)':
+  '@langchain/community@0.0.47(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(hnswlib-node@3.0.0)(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(lodash@4.17.21)(openai@4.54.0)(ws@8.17.1)':
     dependencies:
-      '@langchain/core': 0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
-      '@langchain/openai': 0.0.28(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))
+      '@langchain/core': 0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0)
+      '@langchain/openai': 0.0.28(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))
       expr-eval: 2.0.2
       flat: 5.0.2
-      langsmith: 0.1.41(@langchain/core@0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0))(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
+      langsmith: 0.1.41(@langchain/core@0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0))(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0)
       uuid: 9.0.1
       zod: 3.23.8
       zod-to-json-schema: 3.23.2(zod@3.23.8)
@@ -3685,18 +3769,19 @@ snapshots:
       chromadb: 1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0)
       hnswlib-node: 3.0.0
       lodash: 4.17.21
+      ws: 8.17.1
     transitivePeerDependencies:
       - encoding
       - langchain
       - openai
 
-  '@langchain/core@0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)':
+  '@langchain/core@0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0)':
     dependencies:
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.12
-      langsmith: 0.1.41(@langchain/core@0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0))(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
+      langsmith: 0.1.41(@langchain/core@0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0))(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0)
       ml-distance: 4.0.1
       mustache: 4.2.0
       p-queue: 6.6.2
@@ -3708,13 +3793,13 @@ snapshots:
       - langchain
       - openai
 
-  '@langchain/core@0.2.20(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)':
+  '@langchain/core@0.2.20(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0)':
     dependencies:
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.12
-      langsmith: 0.1.41(@langchain/core@0.2.20(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0))(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
+      langsmith: 0.1.41(@langchain/core@0.2.20(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0))(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0)
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
@@ -3725,17 +3810,17 @@ snapshots:
       - langchain
       - openai
 
-  '@langchain/google-genai@0.0.11(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)':
+  '@langchain/google-genai@0.0.11(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0)':
     dependencies:
       '@google/generative-ai': 0.1.3
-      '@langchain/core': 0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
+      '@langchain/core': 0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0)
     transitivePeerDependencies:
       - langchain
       - openai
 
-  '@langchain/openai@0.0.28(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))':
+  '@langchain/openai@0.0.28(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))':
     dependencies:
-      '@langchain/core': 0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
+      '@langchain/core': 0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0)
       js-tiktoken: 1.0.12
       openai: 4.54.0
       zod: 3.23.8
@@ -3744,13 +3829,19 @@ snapshots:
       - encoding
       - langchain
 
-  '@langchain/textsplitters@0.0.3(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)':
+  '@langchain/textsplitters@0.0.3(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0)':
     dependencies:
-      '@langchain/core': 0.2.20(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
+      '@langchain/core': 0.2.20(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0)
       js-tiktoken: 1.0.12
     transitivePeerDependencies:
       - langchain
       - openai
+
+  '@noble/curves@1.2.0':
+    dependencies:
+      '@noble/hashes': 1.3.2
+
+  '@noble/hashes@1.3.2': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -3763,6 +3854,8 @@ snapshots:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
+
+  '@openzeppelin/contracts@4.9.6': {}
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
@@ -3885,6 +3978,26 @@ snapshots:
     dependencies:
       '@sinonjs/commons': 3.0.1
 
+  '@tableland/evm@6.3.0':
+    dependencies:
+      '@openzeppelin/contracts': 4.9.6
+      ethers: 6.13.2
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
+  '@tableland/sdk@7.2.1':
+    dependencies:
+      '@async-generators/from-emitter': 0.3.0
+      '@tableland/evm': 6.3.0
+      '@tableland/sqlparser': 1.4.1
+      ethers: 6.13.2
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
+  '@tableland/sqlparser@1.4.1': {}
+
   '@telegraf/types@6.9.1': {}
 
   '@types/estree@1.0.5': {}
@@ -3911,6 +4024,8 @@ snapshots:
     dependencies:
       '@types/node': 20.14.14
       form-data: 4.0.0
+
+  '@types/node@18.15.13': {}
 
   '@types/node@18.19.43':
     dependencies:
@@ -4041,6 +4156,8 @@ snapshots:
       acorn: 8.12.1
 
   acorn@8.12.1: {}
+
+  aes-js@4.0.0-beta.5: {}
 
   agentkeepalive@4.5.0:
     dependencies:
@@ -4580,9 +4697,24 @@ snapshots:
 
   esutils@2.0.3: {}
 
+  ethers@6.13.2:
+    dependencies:
+      '@adraffy/ens-normalize': 1.10.1
+      '@noble/curves': 1.2.0
+      '@noble/hashes': 1.3.2
+      '@types/node': 18.15.13
+      aes-js: 4.0.0-beta.5
+      tslib: 2.4.0
+      ws: 8.17.1
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
   event-target-shim@5.0.1: {}
 
   eventemitter3@4.0.7: {}
+
+  events@1.1.1: {}
 
   expand-template@2.0.3: {}
 
@@ -5032,19 +5164,19 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
-  langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1):
+  langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1):
     dependencies:
       '@anthropic-ai/sdk': 0.9.1
-      '@langchain/community': 0.0.47(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(hnswlib-node@3.0.0)(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(lodash@4.17.21)(openai@4.54.0)
-      '@langchain/core': 0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
-      '@langchain/openai': 0.0.28(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))
-      '@langchain/textsplitters': 0.0.3(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
+      '@langchain/community': 0.0.47(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(hnswlib-node@3.0.0)(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(lodash@4.17.21)(openai@4.54.0)(ws@8.17.1)
+      '@langchain/core': 0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0)
+      '@langchain/openai': 0.0.28(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))
+      '@langchain/textsplitters': 0.0.3(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0)
       binary-extensions: 2.3.0
       js-tiktoken: 1.0.12
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
       langchainhub: 0.0.11
-      langsmith: 0.1.41(@langchain/core@0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0))(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
+      langsmith: 0.1.41(@langchain/core@0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0))(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0)
       ml-distance: 4.0.1
       openapi-types: 12.1.3
       p-retry: 4.6.2
@@ -5058,6 +5190,7 @@ snapshots:
       d3-dsv: 2.0.0
       ignore: 5.3.1
       pdf-parse: 1.1.1
+      ws: 8.17.1
     transitivePeerDependencies:
       - '@aws-crypto/sha256-js'
       - '@aws-sdk/client-bedrock-agent-runtime'
@@ -5130,7 +5263,7 @@ snapshots:
 
   langchainhub@0.0.11: {}
 
-  langsmith@0.1.41(@langchain/core@0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0))(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0):
+  langsmith@0.1.41(@langchain/core@0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0))(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0):
     dependencies:
       '@types/uuid': 9.0.8
       commander: 10.0.1
@@ -5139,11 +5272,11 @@ snapshots:
       semver: 7.6.3
       uuid: 9.0.1
     optionalDependencies:
-      '@langchain/core': 0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
-      langchain: 0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)
+      '@langchain/core': 0.1.63(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0)
+      langchain: 0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1)
       openai: 4.54.0
 
-  langsmith@0.1.41(@langchain/core@0.2.20(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0))(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0):
+  langsmith@0.1.41(@langchain/core@0.2.20(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0))(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0):
     dependencies:
       '@types/uuid': 9.0.8
       commander: 10.0.1
@@ -5152,8 +5285,8 @@ snapshots:
       semver: 7.6.3
       uuid: 9.0.1
     optionalDependencies:
-      '@langchain/core': 0.2.20(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1))(openai@4.54.0)
-      langchain: 0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)
+      '@langchain/core': 0.2.20(langchain@0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1))(openai@4.54.0)
+      langchain: 0.1.37(@cloudflare/ai@1.2.2)(@huggingface/inference@2.8.0)(@xenova/transformers@2.17.2)(axios@1.7.3)(chromadb@1.8.1(@google/generative-ai@0.1.3)(openai@4.54.0))(d3-dsv@2.0.0)(hnswlib-node@3.0.0)(ignore@5.3.1)(lodash@4.17.21)(openai@4.54.0)(pdf-parse@1.1.1)(ws@8.17.1)
       openai: 4.54.0
 
   levn@0.4.1:
@@ -5854,6 +5987,8 @@ snapshots:
     dependencies:
       typescript: 5.5.4
 
+  tslib@2.4.0: {}
+
   tslib@2.6.3: {}
 
   tsm@2.3.0:
@@ -5950,6 +6085,8 @@ snapshots:
     dependencies:
       imurmurhash: 0.1.4
       signal-exit: 3.0.7
+
+  ws@8.17.1: {}
 
   yallist@3.1.1: {}
 
