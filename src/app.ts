@@ -8,6 +8,7 @@ import { createAIFlow } from "./index"
 import { typing } from "./utils/presence"
 import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { HuggingFaceInferenceEmbeddings } from "@langchain/community/embeddings/hf";
+import { Alchemy, Network } from "alchemy-sdk"
 import { Wallet, getDefaultProvider } from "ethers";
 import * as rpgDiceRoller from '@dice-roller/rpg-dice-roller';
 import { JSONLoader } from "langchain/document_loaders/fs/json";
@@ -16,7 +17,6 @@ import { Database as TablelandDB } from "@tableland/sdk";
 
 
 /* TBLAND CONFIG
- */
 const pkey = process.env.BOT_PKEY;
 
 const wallet = new Wallet(pkey)
@@ -55,6 +55,14 @@ const readTable = async (tableName: string) => {
     return results;
 }
 
+ */
+
+const config = {
+    apiKey: process.env.ALCHEMY_API_KEY, // Replace with your API key
+    network: Network.BASE_MAINNET, // Replace with your network
+};
+
+const alchemy = new Alchemy(config);
 
 const embeddings = new HuggingFaceInferenceEmbeddings({
     apiKey: process.env.HUGGINGFACEHUB_API_KEY, // In Node.js defaults to process.env.HUGGINGFACEHUB_API_KEY
@@ -76,6 +84,15 @@ const dndFlow = createAIFlow
     `)
     }), async (ctx, { flowDynamic, state, gotoFlow }) => {
         console.log(ctx?.schema)
+        const contractAddress = "0x79e2b756f9c4c12bd8f80c0aeeb7b954e52ff23c";
+        const tokenId = "28";
+
+        // call the method
+        let response = await alchemy.nft.getNftMetadata(contractAddress, tokenId, {});
+
+        // logging the response to the console
+        const persona = response.description
+        ctx.schema.persona = persona
         if (ctx?.schema) {
             const { intention } = ctx.schema
             if (intention == 'REPORT') {
@@ -89,8 +106,8 @@ const dndFlow = createAIFlow
             prompt: z.string().describe('a helper search prompt')
         }),
         async (ctx) => {
+
             console.log({ details: ctx?.context })
-            ctx.context.self = "Your SELF table"
         }
     )
     .setStore({
@@ -112,7 +129,7 @@ const dndFlow = createAIFlow
             answer: z
                 .string()
                 .describe('A very nuanced answer. REFRAIN FROM REPEATING THE CONTEXT DIRECLY')
-        }).describe('You are a coordination agent, reply to the user query using the context to guide your answer. ')
+        }).describe(`you are a coordination engine maximize stigmergy`)
     }, {
         onFailure: (err) => {
             console.log({ err })
@@ -121,12 +138,15 @@ const dndFlow = createAIFlow
     .setContextLayer(z.object({
         haiku: z
             .string()
-            .describe('a haiku exctracting the semantic payload of the context'),
+            .describe('a haiku haiku features three lines of five, seven, and five syllables, respectively'),
+        book: z
+            .string()
+            .describe('the compilation which this haiku is a part of'),
         eval: z
             .number()
             .describe("the quality of the provided context use numbers from 1 to 10")
 
-    }).describe("haiku features three lines of five, seven, and five syllables, respectively. A haiku poem generally presents a single and concentrated image or emotion"),
+    }).describe("Exctracting the semantic payload of the context. A haiku poem generally presents a single and concentrated image or emotion"),
         async (ctx) => {
             console.log({ details: ctx?.context })
         }
@@ -140,7 +160,7 @@ const dndFlow = createAIFlow
                 const payload = {
                     time: Date.now(),
                     query: ctx.body,
-                    context: ctx.context,
+                    haiku: ctx.context,
                     response: response.answer
                 }
 
@@ -231,6 +251,7 @@ const aiflow = createAIFlow
     .createFlow()
 
 const main = async () => {
+
     const PORT = 3010
     const adapterFlow = createFlow([aiflow, dndFlow])
 

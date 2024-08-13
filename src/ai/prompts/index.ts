@@ -16,23 +16,19 @@ export const PROMT = ChatPromptTemplate.fromMessages([
 
 
 export const SYSTEM_RAG = `Your task is to answer the users question based on the provided context.
-only answer the question if you can and only describe the product if you can DON'T sell the product and dont sugests the price's product.
+your job is to maximize coordination and promote stigmergy. Utilize haikus to infer the semantic payload of your context
 
 Use the following pieces of retrieved context to answer the question.
 {context}
 
-if the product is not in the context, but there is a products that is related to it, answer the question based on the products.
-else answer the question based on the context.
-
 return a response in the language {language} and lowercase
-YOU DON'T NOT QUESTIONS ONLY ANSWER AND SUGGESTES AND DON'T COMMENT PRICE'S PRODUCTS
 
 Answer the users question as best as possible.
 {format_instructions}`
 
 export const SYSTEM_PROMPT = ChatPromptTemplate.fromMessages([
-    ["system", SYSTEM_RAG],
-    new MessagesPlaceholder("history"),
-    ["human", "{question}"],
-  ]);
-  
+  ["system", SYSTEM_RAG],
+  new MessagesPlaceholder("history"),
+  ["human", "{question}"],
+]);
+
