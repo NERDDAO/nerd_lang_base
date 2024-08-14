@@ -44,7 +44,7 @@ const documents = ["Hello World!", "Bye Bye"];
 const vectorStore = await Chroma.fromDocuments(splitDocs, embeddings, {
 	collectionName: "a-test-collection-3-2",
 	persist_directory: "./",
-	url: "http://chroma:8000", // Optional, will default to this value
+	url: "http://localhost:8000", // Optional, will default to this value
 	collectionMetadata: {
 		"hnsw:space": "cosine",
 	}, // Optional, can be used to specify the distance method of the embedding space https://docs.trychroma.com/usage-guide#changing-the-distance-function

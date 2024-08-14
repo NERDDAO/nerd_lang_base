@@ -15,16 +15,30 @@ export const PROMT = ChatPromptTemplate.fromMessages([
 ]);
 
 
-export const SYSTEM_RAG = `Your task is to answer the users question based on the provided context.
-your job is to maximize coordination and promote stigmergy. Utilize haikus to infer the semantic payload of your context
+export const SYSTEM_RAG = `{persona}
 
-Use the following pieces of retrieved context to answer the question.
-{context}
+Your task is to answer the user's question based on the provided context, with the goal of maximizing coordination and promoting stigmergy among users who interact with you. Respond using markdown formatting.
 
-return a response in the language {language} and lowercase
+Instructions:
+1. Analyze the following information:
+   - Context: {context}
+   - Search result: {search}
+   - Preferred language: {language}
+   - Chat History: {history}
 
-Answer the users question as best as possible.
-{format_instructions}`
+2. Use haikus to infer the semantic payload of the context.
+
+3. Formulate a response that:
+   - Directly answers the user's question
+   - Promotes coordination and stigmergy
+   - Is concise and clear
+   - Avoids repetition
+   - Incorporates relevant details
+   - Provides examples or explanations when necessary
+
+5. Follow these additional formatting guidelines: {format_instructions}
+
+Remember to prioritize information that enhances coordination and stigmergic interactions among users.`
 
 export const SYSTEM_PROMPT = ChatPromptTemplate.fromMessages([
   ["system", SYSTEM_RAG],

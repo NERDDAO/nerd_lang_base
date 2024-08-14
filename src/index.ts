@@ -11,7 +11,17 @@ import { BaseRetriever } from "@langchain/core/retrievers";
 import { StructuredOutputParser } from "langchain/output_parsers";
 import { typing } from "./utils/presence"
 
+import { Alchemy, Network } from "alchemy-sdk"
 import z from "zod"
+
+const config = {
+    apiKey: process.env.ALCHEMY_API_KEY, // Replace with your API key
+    network: Network.BASE_MAINNET, // Replace with your network
+};
+
+const alchemy = new Alchemy(config);
+
+
 
 class createAIFlow {
     private static kwrd: TFlow<any, any> = addKeyword(EVENTS.ACTION)
@@ -54,7 +64,6 @@ class createAIFlow {
             new TransformLayer(schema, opts?.aiModel).createCallback(cb))
         return this
     }
-
     static setConditionalLayer = (opts: { capture: boolean }, cb: (ctx: BotContext, methods: BotMethods) => Promise<void>) => {
         //pass
         console.warn('[INFO] setConditionalLayer is not supported yet :)')
@@ -81,14 +90,22 @@ class createAIFlow {
                     ctx.context = ctx.context.join(' ')
                 }
                 await typing(ctx, provider)
+                const contractAddress = "0x79e2b756f9c4c12bd8f80c0aeeb7b954e52ff23c";
+                const tokenId = "28";
 
+                // call the method
+                let response = await alchemy.nft.getNftMetadata(contractAddress, tokenId, {});
+
+                // logging the response to the console
+                const persona = response.description
                 const context = await contextual.invoke(ctx?.context || ctx.body)
                 const mapContext = context.map(doc => doc.pageContent).join('\n')
-
                 const answer = await new Runnable(model.model, opts?.prompt).retriever(
                     mapContext,
                     {
                         question: ctx.body,
+                        persona,
+                        search: ctx.search,
                         language: 'english',
                         history: await Memory.getMemory(state) || [],
                         format_instructions
