@@ -1,0 +1,50 @@
+[WARNING]: Importing from "langchain/document_loaders/fs/csv" is deprecated.
+
+Instead, please add the "@langchain/community" package to your project with e.g.
+
+    $ npm install @langchain/community
+
+and import from "@langchain/community/document_loaders/fs/csv".
+
+This will be mandatory after the next "langchain" minor version bump to 0.3.
+[WARNING]: Importing from "langchain/document_loaders/fs/pdf" is deprecated.
+
+Instead, please add the "@langchain/community" package to your project with e.g.
+
+    $ npm install @langchain/community
+
+and import from "@langchain/community/document_loaders/fs/pdf".
+
+This will be mandatory after the next "langchain" minor version bump to 0.3.
+(node:176291) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[WARNING]: Importing from "langchain/document_loaders/fs/csv" is deprecated.
+
+Instead, please add the "@langchain/community" package to your project with e.g.
+
+    $ npm install @langchain/community
+
+and import from "@langchain/community/document_loaders/fs/csv".
+
+This will be mandatory after the next "langchain" minor version bump to 0.3.
+[WARNING]: Importing from "langchain/document_loaders/fs/pdf" is deprecated.
+
+Instead, please add the "@langchain/community" package to your project with e.g.
+
+    $ npm install @langchain/community
+
+and import from "@langchain/community/document_loaders/fs/pdf".
+
+This will be mandatory after the next "langchain" minor version bump to 0.3.
+(node:191502) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+TypeError: Cannot read properties of null (reading 'answer')
+    at Object.ans_8e65feeb-377d-4d01-aa95-e0f82d2de28b (/home/at0x/Vaults/nerd_langchain/dist/app.cjs:672:36)
+    at runContext (/home/at0x/Vaults/nerd_langchain/node_modules/.pnpm/@builderbot+bot@1.2.1/node_modules/@builderbot/bot/dist/index.cjs:14310:65)
+    at cbEveryCtx (/home/at0x/Vaults/nerd_langchain/node_modules/.pnpm/@builderbot+bot@1.2.1/node_modules/@builderbot/bot/dist/index.cjs:14341:23)
+    at resolveCbEveryCtx (/home/at0x/Vaults/nerd_langchain/node_modules/.pnpm/@builderbot+bot@1.2.1/node_modules/@builderbot/bot/dist/index.cjs:14272:39)
+    at /home/at0x/Vaults/nerd_langchain/node_modules/.pnpm/@builderbot+bot@1.2.1/node_modules/@builderbot/bot/dist/index.cjs:14124:41
+    at async Object.promiseInFunc (/home/at0x/Vaults/nerd_langchain/node_modules/.pnpm/@builderbot+bot@1.2.1/node_modules/@builderbot/bot/dist/index.cjs:14123:25)
+    at async Queue.processItem (/home/at0x/Vaults/nerd_langchain/node_modules/.pnpm/@builderbot+bot@1.2.1/node_modules/@builderbot/bot/dist/index.cjs:781:27)
+    at async Promise.all (index 0)
+    at async Queue.processQueue (/home/at0x/Vaults/nerd_langchain/node_modules/.pnpm/@builderbot+bot@1.2.1/node_modules/@builderbot/bot/dist/index.cjs:862:13)

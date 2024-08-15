@@ -22,7 +22,7 @@
 	},
 	"dependencies": {
 		"@builderbot-plugins/fast-embedding": "1.0.0-alpha.0",
-		"@builderbot/bot": "1.1.0",
+		"@builderbot/bot": "1.2.1",
 		"@dice-roller/rpg-dice-roller": "^5.5.0",
 		"@huggingface/inference": "^2.8.0",
 		"@langchain/community": "^0.2.27",

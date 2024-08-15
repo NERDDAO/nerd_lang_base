@@ -9,10 +9,13 @@ import { StructLayer, TransformLayer } from "./layers";
 import { CustomRetriever } from "./ai/retrievers";
 import { BaseRetriever } from "@langchain/core/retrievers";
 import { StructuredOutputParser } from "langchain/output_parsers";
+import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { typing } from "./utils/presence"
-
+import { HuggingFaceInferenceEmbeddings } from "@langchain/community/embeddings/hf";
 import { Alchemy, Network } from "alchemy-sdk"
 import z from "zod"
+
+import type { Document } from "@langchain/core/documents";
 
 const config = {
     apiKey: process.env.ALCHEMY_API_KEY, // Replace with your API key
@@ -78,7 +81,9 @@ class createAIFlow {
     static createRunnable = (opts?: RunnableConf, callbacks?: Callbacks) => {
         let contextual = opts?.customContextual || new ContextualCompression(opts?.contextual?.retriever || this.store, opts?.contextual?.contextOpts);
         let model: FactoryModel = new FactoryModel(opts?.aiModel);
-
+        const embeddings = new HuggingFaceInferenceEmbeddings({
+            apiKey: process.env.HUGGINGFACEHUB_API_KEY, // In Node.js defaults to process.env.HUGGINGFACEHUB_API_KEY
+        });
         const schema = opts?.answerSchema || z.object({ answer: z.string().describe('Answer as best possible') })
         const format_instructions = new StructuredOutputParser(schema).getFormatInstructions()
 
@@ -89,19 +94,31 @@ class createAIFlow {
                 } else if (Array.isArray(ctx.context)) {
                     ctx.context = ctx.context.join(' ')
                 }
-                await typing(ctx, provider)
                 const contractAddress = "0x79e2b756f9c4c12bd8f80c0aeeb7b954e52ff23c";
                 const tokenId = "28";
 
                 // call the method
                 let response = await alchemy.nft.getNftMetadata(contractAddress, tokenId, {});
 
+
+                /*FLOW DEFINITION*/
+                const vectorStore = new Chroma(embeddings, {
+                    collectionName: `db${ctx.from.toString()}`,
+                    url: process.env.CHROMADB_URL, // Optional, will default to this value
+                });
+
+                ctx.vectorStore = vectorStore;
+
                 // logging the response to the console
                 const persona = response.description
+                const selfContextual = new ContextualCompression(vectorStore.asRetriever(5), opts?.contextual?.contextOpts);
                 const context = await contextual.invoke(ctx?.context || ctx.body)
+                const selfContext = await selfContextual.invoke(ctx?.context || ctx.body)
                 const mapContext = context.map(doc => doc.pageContent).join('\n')
+                const selfMap = selfContext?.map(doc => doc.pageContent).join('\n')
+                const metaContext = [mapContext, selfMap].join('\n')
                 const answer = await new Runnable(model.model, opts?.prompt).retriever(
-                    mapContext,
+                    metaContext,
                     {
                         question: ctx.body,
                         persona,
@@ -117,7 +134,7 @@ class createAIFlow {
                 Memory.memory({ user: ctx.body, assistant: JSON.stringify(answer) }, state)
 
 
-                console.log(answer)
+                console.log(answer, ctx.search)
                 const chunks = answer.answer.split(/\n\n+/);
                 for (const chunk of chunks) {
                     await flowDynamic([{ body: chunk.trim() }]);

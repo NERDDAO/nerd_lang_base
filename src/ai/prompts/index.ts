@@ -9,9 +9,9 @@ Answer the users question as best as possible.
     {format_instructions}`
 
 export const PROMT = ChatPromptTemplate.fromMessages([
-  ["system", SYSTEM_STRUCT],
-  new MessagesPlaceholder("history"),
-  ["human", "{question}"],
+   ["system", SYSTEM_STRUCT],
+   new MessagesPlaceholder("history"),
+   ["human", "{question}"],
 ]);
 
 
@@ -22,7 +22,7 @@ Your task is to answer the user's question based on the provided context, with t
 Instructions:
 1. Analyze the following information:
    - Context: {context}
-   - Search result: {search}
+   - Online Search result: {search}
    - Preferred language: {language}
    - Chat History: {history}
 
@@ -41,8 +41,8 @@ Instructions:
 Remember to prioritize information that enhances coordination and stigmergic interactions among users.`
 
 export const SYSTEM_PROMPT = ChatPromptTemplate.fromMessages([
-  ["system", SYSTEM_RAG],
-  new MessagesPlaceholder("history"),
-  ["human", "{question}"],
+   ["system", SYSTEM_RAG],
+   new MessagesPlaceholder("history"),
+   ["human", "{question}"],
 ]);
 
