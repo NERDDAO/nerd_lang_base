@@ -9,6 +9,8 @@ import { typing } from "./utils/presence"
 import { HuggingFaceInferenceEmbeddings } from "@langchain/community/embeddings/hf";
 import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
 
+import { idleFlow } from './flows/idle-custom'
+
 import { Chroma } from "@langchain/community/vectorstores/chroma";
 
 import type { Document } from "@langchain/core/documents";
@@ -41,7 +43,6 @@ const welcomeFlow = addKeyword(EVENTS.WELCOME)
 
             ctx.vectorStore = vectorStore;
 
-            console.log(ctx.from, vectorStore)
             try {
 
                 const document1: Document = {
@@ -64,9 +65,9 @@ const welcomeFlow = addKeyword(EVENTS.WELCOME)
 const dndFlow = createAIFlow
     .setKeyword(["Raggy", "raggy", "Rag", "rag"])
     .setStructuredLayer(z.object({
-        intention: z.enum(['NORMAL', 'REPORT', 'SEARCH']).describe(`query types:
+        intention: z.enum(['NORMAL', 'GLOBAL', 'SEARCH']).describe(`query types:
             NORMAL: Normal queries exploring the context
-            SECRET: Prompts that arent helpful in a global context
+            GLOBAL: Queries that may benefit from being broadcasted to the network
             SEARCH: Look for information outside your context
     `)
     }), async (ctx, { flowDynamic, state, gotoFlow }) => {
@@ -114,7 +115,7 @@ const dndFlow = createAIFlow
         answerSchema: z.object({
             answer: z
                 .string()
-                .describe('A very nuanced answer. REFRAIN FROM REPEATING THE CONTEXT DIRECLY')
+                .describe('A very nuanced answer.')
         }).describe(`you are a coordination engine maximize stigmergy`)
     }, {
         onFailure: (err) => {
@@ -125,7 +126,7 @@ const dndFlow = createAIFlow
     .setContextLayer(z.object({
         haiku: z
             .string()
-            .describe('a haiku haiku features three lines of five, seven, and five syllables, respectively split lines with \n'),
+            .describe('a haiku haiku features three lines of five, seven, and five syllables, respectively split lines with "\n"'),
         book: z
             .string()
             .describe('the compilation which this haiku is a part of'),
@@ -141,42 +142,52 @@ const dndFlow = createAIFlow
 
     .pipe(({ addAction }) => {
 
-        return addAction(async (ctx, { flowDynamic, state }) => {
+        return addAction(async (ctx, { endFlow, flowDynamic, state }) => {
             const response = state.get('answer')
-
-            if (ctx.context.eval > 0.5) {
-                const payload = {
-                    time: Date.now(),
-                    query: ctx.body,
-                    haiku: ctx.context,
-                    response: response.answer
-                }
-
-                const documents = [
-                    {
-                        pageContent: JSON.stringify(payload),
-                        metadata: {
-                            time: payload.time,
-                            owner: ctx.from,
-                            haiku: ctx.context
-                        }
-
-                    }
-                ]
-
-
-                flowDynamic(`"Interesting! eval: ${ctx.context.eval}"scope: ${ctx.schema.intention}`)
-                const gstore = makeVectorStore(`db${ctx.from.toString()}`)
-                let ids: any[]
-                if (ctx.schema.intention != "SECRET") {
-                    const store = makeVectorStore("nerdTable")
-                    ids = await store.addDocuments(documents);
-                }
-                const moreIds = await gstore.addDocuments(documents)
-
-                console.log(documents, ids, moreIds)
+            const payload = {
+                time: Date.now(),
+                query: ctx.body,
+                haiku: ctx.context,
+                response: response.answer
             }
 
+            const documents = [
+                {
+                    pageContent: JSON.stringify(payload),
+                    metadata: {
+                        time: payload.time,
+                        owner: ctx.from,
+                        haiku: ctx.context
+                    }
+
+                }
+            ]
+
+            const gstore = makeVectorStore(`db${ctx.from.toString()}`)
+
+            const moreIds = await gstore.addDocuments(documents)
+            state.update({ documents })
+            if (ctx.schema.intention != "GLOBAL") {
+                endFlow(`embedded ${moreIds}`)
+            }
+        }).addAnswer("Embed to nerdTable? (yes / no)", { capture: true }, async (ctx, { state, flowDynamic, endFlow }) => {
+            if (ctx.body == "no") {
+                endFlow(":(")
+            }
+            const documents = state.get('documents')
+
+
+
+
+            flowDynamic(`"Interesting!`)
+            let ids: any[]
+
+
+
+            const store = makeVectorStore("nerdTable")
+            ids = await store.addDocuments(documents);
+
+            console.log(documents, ids)
         })
     })
     .createFlow()
