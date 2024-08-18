@@ -72,56 +72,67 @@ export type RunnableConf = {
   aiModel?: AiModel
 }
 
-export interface Product {
+export interface Activity {
   id: string
-  handle: string
-  availableForSale: boolean
+  name: string
+  isActive: boolean
   title: string
   description: string
-  descriptionHtml: string
-  options: Option[]
-  priceRange: PriceRange
-  featuredImage: FeaturedImage
+  detailedDescription: string
+  categories: Category[]
+  timeRange: TimeRange
+  primaryPlatform: Platform
   tags: string[]
-  images: Image[]
-  variants: Variant[]
+  platforms: Platform[]
+  subActivities: SubActivity[]
+  participants: Participant[]
 }
 
-export interface Option {
+export interface Category {
   id: string
   name: string
   values: string[]
 }
 
-export interface PriceRange {
-  min: number
-  max: number
+export interface TimeRange {
+  start: Date
+  end: Date
 }
 
-export interface FeaturedImage {
-  url: string
+export interface Platform {
+  name: string
+  url?: string
 }
 
-export interface Image {
-  url: string
-  altText: string
-}
-
-export interface Variant {
+export interface SubActivity {
   id: string
   title: string
-  availableForSale: boolean
-  selectedOptions: SelectedOption[]
-  price: Price[]
+  isActive: boolean
+  requiredResources: RequiredResource[]
+  duration: Duration
+  participants: Participant[]
 }
 
-export interface SelectedOption {
+export interface RequiredResource {
   name: string
-  value: string
+  quantity: number
 }
 
-export interface Price {
-  amount: string
-  currencyCode: string
+export interface Duration {
+  amount: number
+  unit: 'minutes' | 'hours' | 'days'
+}
+
+export interface Participant {
+  id: string
+  name: string
+  role: string
+  status: 'active' | 'inactive' | 'pending'
+  contactInfo: ContactInfo
+}
+
+export interface ContactInfo {
+  email: string
+  additionalPlatforms?: { [key: string]: string }
 }
 

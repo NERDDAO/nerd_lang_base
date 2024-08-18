@@ -117,24 +117,56 @@ class createAIFlow {
                 const mapContext = context.map(doc => doc.pageContent).join('\n')
                 const selfMap = selfContext?.map(doc => doc.pageContent).join('\n')
                 const metaContext = [mapContext, selfMap].join('\n')
+                interface SearchResult {
+                    title: string;
+                    content: string;
+                    url: string;
+                }
+                function simplifySearchResults(results: string | any[]): SearchResult[] {
+                    let parsedResults: any[];
+
+                    if (typeof results === 'string') {
+                        try {
+                            parsedResults = JSON.parse(results);
+                        } catch (error) {
+                            console.error('Error parsing results string:', error);
+                            return [];
+                        }
+                    } else if (Array.isArray(results)) {
+                        parsedResults = results;
+                    } else {
+                        console.error('Invalid input type. Expected string or array.');
+                        return [];
+                    }
+
+                    return parsedResults.map(result => ({
+                        title: result.title,
+                        content: result.content,
+                        url: result.url
+                    }));
+                }
+                function flattenSearchResults(results: SearchResult[]): string {
+                    return results.map(result => `Title: ${result.title}\nContent: ${result.content}\nLink:${result.url}`).join('\n\n');
+                }
+
+                // In your main code:
+                const simpleSearch = simplifySearchResults(ctx.search);
+                const flattenedSearch = flattenSearchResults(simpleSearch);
+                console.log(flattenedSearch, "LOGGING HERE ");
+
                 const answer = await new Runnable(model.model, opts?.prompt).retriever(
                     metaContext,
                     {
                         question: ctx.body,
                         persona,
-                        search: ctx.search,
+                        search: flattenedSearch,
                         language: 'english',
                         history: await Memory.getMemory(state) || [],
                         format_instructions
                     },
                     schema
-                )
+                ); Memory.memory({ user: ctx.body, assistant: JSON.stringify(answer) }, state)
 
-
-                Memory.memory({ user: ctx.body, assistant: JSON.stringify(answer) }, state)
-
-
-                console.log(answer, ctx.search)
                 const chunks = answer.answer.split(/\n\n+/);
                 for (const chunk of chunks) {
                     await flowDynamic([{ body: chunk.trim() }]);

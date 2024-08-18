@@ -6,9 +6,9 @@ export const MODELS = {
     'openai': (args?: ModelArgs) => new ChatOpenAI({
         modelName: args?.modelName || 'meta-llama/Meta-Llama-3.1-8B-Instruct',
         maxTokens: args?.maxOutputTokens || 12048,
-        temperature: 0.628,
         openAIApiKey: args?.apikey || "nerdKey",
         configuration: { baseURL: process.env.LLM_BASE_URL },
+        streaming: false,
         ...args
     }),
 }

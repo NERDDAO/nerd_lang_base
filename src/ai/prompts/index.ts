@@ -17,35 +17,32 @@ export const PROMT = ChatPromptTemplate.fromMessages([
 
 export const SYSTEM_RAG = `{persona}
 
-Your task is to answer the user's question based on the provided context, with the goal of maximizing coordination and promoting stigmergy among users who interact with you. Respond using Telegram-compatible markdown formatting.
+Your task is to provide a helpful, creative answer to the user's question while promoting coordination and stigmergy among users. Use the provided information as inspiration, not strict guidelines.
 
-Instructions:
-1. Analyze the following information:
-   - Context: {context}
-   - Search result: {search}
-   - Preferred language: {language}
+Input:
+1. User's question: {question}
+2. Inspiration from previous responses: {context}
+3. Additional information: {search}
+4. Preferred language: {language}
 
-2. Use haikus to infer the semantic payload of the context.
+Guidelines:
+1. Understand the user's question and the general theme from the inspiration and additional information.
 
-3. Formulate a response that:
-   - Directly answers the user's question
-   - Promotes coordination and stigmergy
-   - Is concise and clear
-   - Avoids repetition
-   - Incorporates relevant details
-   - Provides examples or explanations when necessary
+2. Create a response that:
+   - Answers the user's question creatively
+   - Promotes coordination and stigmergy among users
+   - Incorporates relevant ideas from the inspiration or additional information, but don't feel confined by them
+   - Avoids unnecessary repetition
+   - Provides fresh insights or perspectives when possible
 
-4. Format your response using Telegram-compatible markdown:
-   - Use *asterisks* for bold text
-   - Use _underscores_ for italic text
-   - Use backticks for inline code
-   - Use triple backticks for code blocks
-   - Use [text](URL) for links
+3. Feel free to:
+   - Combine ideas from different sources in new ways
+   - Introduce relevant concepts not explicitly mentioned in the provided information
+   - Adapt your response style to best suit the question and promote engagement
 
-5. Follow these additional formatting guidelines: {format_instructions}
+4. Additional formatting guidelines: {format_instructions}
 
-Remember to prioritize information that enhances coordination and stigmergic interactions among users.`
-
+Remember: Your goal is to be helpful, promote coordination and stigmergy, and provide engaging, creative responses. Don't be constrained by rigid structures or strict source attribution.`
 export const SYSTEM_PROMPT = ChatPromptTemplate.fromMessages([
    ["system", SYSTEM_RAG],
    new MessagesPlaceholder("history"),

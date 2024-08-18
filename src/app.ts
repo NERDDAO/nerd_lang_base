@@ -72,6 +72,7 @@ const dndFlow = createAIFlow
     `)
     }), async (ctx, { flowDynamic, state, gotoFlow }) => {
         console.log(ctx?.schema)
+        //flowDynamic("thinking")
 
         if (ctx?.schema) {
             const { intention } = ctx.schema
@@ -95,9 +96,7 @@ const dndFlow = createAIFlow
                 const result = await tool.invoke({
                     input: ctx?.context.prompt,
                 });
-                ctx.search = { result }
-
-                console.log({ details: ctx?.context, search: ctx.search })
+                ctx.search = result
 
             }
 
@@ -121,12 +120,13 @@ const dndFlow = createAIFlow
         onFailure: (err) => {
             console.log({ err })
         }
+
     })
 
     .setContextLayer(z.object({
         haiku: z
             .string()
-            .describe('a haiku haiku features three lines of five, seven, and five syllables, respectively split lines with "\n"'),
+            .describe('the semantic payload expressed in a haiku'),
         book: z
             .string()
             .describe('the compilation which this haiku is a part of'),
@@ -163,23 +163,26 @@ const dndFlow = createAIFlow
                 }
             ]
 
-            const gstore = makeVectorStore(`db${ctx.from.toString()}`)
+            try {
 
-            const moreIds = await gstore.addDocuments(documents)
-            state.update({ documents })
-            if (ctx.schema.intention != "GLOBAL") {
-                endFlow(`embedded ${moreIds}`)
+                const gstore = makeVectorStore(`db${ctx.from.toString()}`)
+
+                const moreIds = await gstore.addDocuments(documents)
+                state.update({ documents })
+                if (ctx.schema.intention != "GLOBAL") {
+                    endFlow()
+                }
+            } catch (e) {
+                flowDynamic(`${e}`)
             }
-        }).addAnswer("Embed to nerdTable? (yes / no)", { capture: true }, async (ctx, { state, flowDynamic, endFlow }) => {
-            if (ctx.body == "no") {
-                endFlow(":(")
-            }
+        }).addAnswer("Embedding globally to nerdTable", { capture: false }, async (ctx, { state, flowDynamic, endFlow }) => {
+
             const documents = state.get('documents')
 
 
 
 
-            flowDynamic(`"Interesting!`)
+            //flowDynamic(`"Interesting!`)
             let ids: any[]
 
 

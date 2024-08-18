@@ -48,3 +48,23 @@ TypeError: Cannot read properties of null (reading 'answer')
     at async Queue.processItem (/home/at0x/Vaults/nerd_langchain/node_modules/.pnpm/@builderbot+bot@1.2.1/node_modules/@builderbot/bot/dist/index.cjs:781:27)
     at async Promise.all (index 0)
     at async Queue.processQueue (/home/at0x/Vaults/nerd_langchain/node_modules/.pnpm/@builderbot+bot@1.2.1/node_modules/@builderbot/bot/dist/index.cjs:862:13)
+[WARNING]: Importing from "langchain/document_loaders/fs/csv" is deprecated.
+
+Instead, please add the "@langchain/community" package to your project with e.g.
+
+    $ npm install @langchain/community
+
+and import from "@langchain/community/document_loaders/fs/csv".
+
+This will be mandatory after the next "langchain" minor version bump to 0.3.
+[WARNING]: Importing from "langchain/document_loaders/fs/pdf" is deprecated.
+
+Instead, please add the "@langchain/community" package to your project with e.g.
+
+    $ npm install @langchain/community
+
+and import from "@langchain/community/document_loaders/fs/pdf".
+
+This will be mandatory after the next "langchain" minor version bump to 0.3.
+(node:79464) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)

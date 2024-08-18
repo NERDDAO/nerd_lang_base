@@ -1,0 +1,160 @@
+(Any views expressed here are the personal views of the author and should not form the basis for making investment decisions, nor be construed as a recommendation or advice to engage in investment transactions.)
+
+Water, water, every where,
+And all the boards did shrink;
+Water, water, every where,
+Nor any drop to drink.
+
+– Coleridge, Rime of the Ancient Mariner
+
+I love specialty coffee, but my home brews are utter disasters. I spend a decent amount of money on beans, but my cup always tastes inferior to one I sip at the cafe. To better my brews, I started taking the details a bit more seriously. One detail I realised I had been neglecting was the quality of my water.
+
+It is now apparent to me how important water is to the quality of my brew. A recent essay in the 35th issue of Standart slapped hard.
+
+A similar phenomenon occurred during my tenure as a barista when I learnt that over 98 percent of a cup of coffee and around 90 percent of espresso is water.
+
+…
+
+This realization tends to hit people much later in their coffee journey, possibly because it’s much easier to throw money at a new machine marketed towards better coffee. ‘Ah, you have a cone grinder! That’s why your pour-overs are muddy. Switch to a flat burr!’ But what if the two percent wasn’t the issue? What if focusing on the solvent itself could heal our coffee woes?
+
+– Lance Hedrick, On Water Chemistry
+
+My next step was to digest the author’s suggestions and order an at-home water distiller. I know a local coffee shop that sells mineral concentrates to add to your water, which will create the perfect substrate to bring out the intended flavours of their roasts. By this winter, my morning cuppa is going to be delectable … I hope. I pray for the taste buds of my intrepid friends who will sip my black gold before skinning up Mt. Yotei.
+
+Quality water is essential for brewing delicious coffee. Shifting gears to investing, water, or liquidity, is important to stacking sats. This is a recurring theme throughout my essays. But we often forget how important it is and focus on the little things we believe will impact our ability to make money.
+
+It is very hard to lose money investing if you can recognise how, where, why, and when fiat liquidity is being created. Unless you are Su Zhu or Kyle Davies. If financial assets are priced in USD and off US Treasuries (UST), then it stands to reason that the quantity of currency and dollar debt globally are the most critical variables.
+
+Instead of focusing on the US Federal Reserve (Fed), we must focus on the US Treasury Department. This is how we will determine the specifics of Pax Americana’s addition and subtraction of fiat liquidity.
+
+We need to refer back to the concept of “fiscal dominance” to understand why US Treasury Secretary Bad Gurl Yellen has made Fed chairman Jay Powel her beta cuck towel bitch boy. Please read my essay, “Kite or Board” for a more in-depth discussion. During a period of fiscal dominance, the necessity to fund the state overrides any concerns the central bank may have about inflation. That means bank credit and, by extension, nominal GDP growth must be sustained at high levels even if it results in persistently higher than target inflation.
+
+Time and compounding interest determine when power shifts from the central bank to the treasury. When debt-to-GDP crosses 100%, debt mathematically grows exponentially faster than the economy. After this event horizon, the agency controlling the supply of debt is crowned emperor. That is because the Treasury determines when, how much, and at what maturity debt will be issued. Also, because the government is now addicted to debt-fueled growth just to tread water, it will eventually instruct the central bank to cash the Treasury’s checks using its money printer. Central bank independence be damned!
+
+
+
+The onset of COVID and the government response in the US to lock folks in their homes and pay for their obedience with stimmie checks caused a dramatic surge of debt-to-GDP above 100%. It was only a matter of time before the transformation from Grandma to Bad Gurl Yellen occurred.
+
+Before the US gets into an outright hyperinflationary scenario, there is a simple way in which Bad Gurl Yellen can create more credit and juice asset markets. The Fed has two pools of sterilised money on its balance sheet that, if they were to be released into the wild, would generate bank credit growth and raise asset prices. The first pool is the Reverse Repo Program (RRP). I have spoken at length about this pool of money whereby money market funds (MMF) park cash at the Fed overnight and receive interest. The second pool is bank reserves, and the Fed program, which pays interest on this pool of money, works in a similar manner.
+
+While money is on the Fed’s balance sheet, it cannot be rehypothecated into the financial markets to generate broad money or credit growth. By bribing banks and MMFs with interest on reserves and the RRP, respectively, the Fed’s quantitative easing (QE) program created financial asset price inflation rather than an explosion of bank credit. If QE weren’t sterilised in this manner, bank credit would have flowed into the real economy, increasing output and goods/services inflation. Given the current gross indebtedness of Pax Americana, strong nominal GDP growth coupled with goods/services/wage inflation is precisely what the government needs to boost tax receipts and deleverage. Therefore, in steps Bad Gurl Yellen to right the ship.
+
+Bad Gurl Yellen doesn’t give two fucks about inflation. Her goal is to create nominal economic growth so that tax receipts rise and the US debt-to-GDP ratio falls. Given that no political party or their supporters are committed to cutting spending, deficits will continue for the foreseeable future. Furthermore, due to the magnitude of the federal deficit, the largest in peacetime history, she must use all the tools at her disposal to fund the government. Specifically, that means coaxing as much money as she can off of the Fed’s balance sheet and into the real economy.
+
+Yellen needs to give banks and MMFs something they want. They want a yield-bearing cash-like instrument with no credit and minimal interest rate risk to replace the yield-bearing cash they hold at the Fed. A Treasury bill (T-bill) with a maturity of less than one year and yields slightly more than Interest on Reserve Balances (IORB) and or RRP is the perfect substitute. A T-bill is an asset that can be leveraged in the wild and will generate credit and asset price growth. 
+
+Does Yellen have the ability to issue $3.6 trillion worth of T-bills?1 You fucking betcha she does. The federal government is running a $2 trillion annual deficit, which must be financed via Treasury-issued debt securities.
+
+However, Yellen or whoever replaces her in January 2025 doesn’t have to issue T-bills to fund the government. She could sell longer-dated Treasury securities that are less liquid and carry higher interest rate risk. These securities are not cash equivalents. Also, due to the shape of the yield curve, longer-dated debt securities yield less than T-bills. The profit motive of banks and MMFs precludes them from exchanging money held at the Fed for anything but T-bills.
+
+Why should we crypto traders care about the movement of money between the Fed’s balance sheet and the broader financial system? Feast your eyes on this beautiful chart.
+
+
+
+As the RRP (white) fell from its high, Bitcoin (gold) pumped off the lows. As you can see, it’s a very tight relationship. As money leaves the Fed’s balance sheet, it adds liquidity, which causes finite financial assets such as Bitcoin to go to the moon.
+
+Why did this happen? Let’s ask the Treasury Borrowing Advisory Committee (TBAC). In its most recent report, the TBAC clearly stated the relationship between increased T-bill issuance and the amount of money held by MMFs in the RRP.
+
+Large ON RRP balances could indicate unmet demand for T-bills. Over 2023-24, ON RRP drained as Money Funds shifted nearly one-for-one into T-bills. This rotation facilitated seamless digestion of record T-bill issuance.
+
+– Slide 17, TBAC 31 July 2024
+
+As long as T-bills yield slightly more than RRP, MMFs will move cash into T-bills—currently, the 1-month T-bill yields ~0.05% more than money in the RRP.
+
+The next question is whether Bad Gurl Yellen can coax the remaining $300bn to $400bn of funds from the RRP and into T-bills. If you doubt Bad Gurl Yellen, you ‘bout to be sanctioned! Ask all those poor souls from “shithole countries” about what happens when you lose access to dollars to buy essential things like food, energy, and medicine.
+
+In the most recent Q3 2024 Quarterly Refunding Announcement (QRA), the Treasury said it will issue $271bn of T-bills between now and the end of the calendar year. That’s good, but there is still money left in the RRP. Can she do more?
+
+Let me quickly talk about the Treasury Buyback Program. Through this program, the Treasury buys back illiquid non-T-bill debt securities. The Treasury can fund the purchases by drawing down its general account (TGA) or issuing T-bills. If the Treasury increases the supply of T-bills and reduces the supply of other types of debt, it net adds liquidity. Money will leave the RRP, which is positive for dollar liquidity, and as the supply of other types of treasury debt decreases, those holders will move out onto the risk curve to replace those financial assets.
+
+The most recently released buyback schedule from now until November 2024 totals up to $30bn worth of off-the-run securities to be purchased. That equates to another $30bn of T-bills issued, raising the outflows from the RRP to $301bn. 
+
+That’s a solid liquidity injection. But how badass is Bad Gurl Yellen? How badly does she want the minority-American presidential candidate Momalla Harris to win? I say “minority” because Harris changes her phenotype affiliation depending on the crowd she addresses. It’s quite a unique ability she possesses. I’m with Her!
+
+The Treasury can inject mega liquidity by running the TGA down to zero from ~$750bn. They can do this because the debt ceiling will kick in on January 1st, 2025, and by law, the Treasury can spend down the TGA to avert or forestall a government shutdown.
+
+Bad Gurl Yellen will inject at least $301 billion and a maximum of $1.05 trillion between now and year-end. Wham! That is going to create a glorious bull market in all types of risk assets, including crypto, all in time for the election. If Harris still can’t beat the orange man, well, then I think she needs to transform into a white male. I’m sure she has that superpower under her / his belt. 
+
+The Holy Hand Grenade
+Injecting $2.5tn into financial markets via drainage of the RRP over the past 18 months is quite impressive. But there is a bigger pile of dormant liquidity jonesing to get liberated. Can Yellen’s successor from 2025 onwards engineer a situation that sucks funds out of bank reserves held at the Fed and into the broader economy?
+
+During a period of fiscal dominance, all things are possible. But how?
+
+A for-profit bank will exchange one yield-bearing cash-like instrument for another as long as regulators treat them the same for capital adequacy ratios and the latter sports a higher yield. Currently, T-bills yield less than reserve balances held at the Fed, so banks will not bid for T-bills.
+
+But what happens starting next year when the RRP is near zero and the Treasury continues to dump large quantities of T-bills on the market? The ample supply and the inability of MMFs to purchase T-bills with money parked at the RRP means the price must fall and yields rise. As soon as the T-bill yield rises a few basis points above the interest rate paid on excess reserves, banks will hoover up T-bills using their reserves.
+
+Yellen’s successor – who I am willing to bet will be Jamie Dimon – will not be able to resist the ability to juice the market for the political benefit of the party in power by continuing to stuff T-bills down the market’s throat. An additional $3.3 trillion of bank reserve liquidity is waiting to be injected into the financial markets. Chant it with me: Bills, Baby, Bills!
+
+I believe the TBAC is quietly hinting at this eventuality. Here is another snippet from the same report as earlier, my comments in [blue]:
+
+Looking ahead, numerous factors may warrant further study in considering the share of future T-bill issuance:
+
+[The TBAC wants the Treasury to contemplate the future and how large the T-bill issuance should be. Throughout the whole presentation they advocated for T-bill issuance to hover around 20% of total net debt issued. I believe they are trying to say what would cause that to increase, and why banks would be the ones purchasing these T-bills.]
+
+– Evolution and continued evaluation of the banking regulatory landscape (spanning liquidity & capital reforms, among others), and implications for banks and dealers to meaningfully participate in primary Treasury markets to intermediate and warehouse (anticipated) future US Treasury duration & supply
+
+[Banks do not want to hold more notes or bonds with longer maturities that attract more stringent collateral requirements from the regulators. They are quietly saying we will not buy anymore longer dated debt because it hurts their profitability and is too risky. If the primary dealers go on strike, the Treasury is fucked because who else has the balance sheet to absorb the monster debt auctions.]
+
+– Market structure evolutions and their impacts on Treasury market’s resiliency initiatives including,
+
+> SEC’s central clearing rule, which will require significant increases in margin to be posted to covered clearing agencies
+
+[If the Treasury market moves on exchange, that would require dealers to post billions of dollars worth of additional collateral. They cannot afford to do that, and the result would be decreased participation.]
+
+> Future (anticipated) US Treasury auction sizes and predictability across cash management and Benchmark T-bill issuances
+
+[The amount of debt issued could rise substantially if deficits continue to be as large as they are. Therefore T-bills acting as a ‘shock absorber’ is only going to become more important. Which means a higher T-bill issuance is necessary.]
+
+> Future Money Fund reform and potential incremental structural demand for T-bills
+
+[T-bill issuance will go higher than 20% if the MMFs come back into the market after the RRP is completely drained.]
+
+– Slide 26, TBAC 31 July 2024
+
+The banks have already effectively gone on strike buying longer-dated Treasury securities. Bad Gurl Yellen and Powell almost caused a banking meltdown by stuffing banks full of Treasuries and then jacking rates from 2022 to 2023 … RIP Silvergate, Silicon Valley Bank, and Signature Bank. The remaining banks aren’t fucking around and finding out what happens if you gorge on overpriced Treasuries again.
+
+Case in point: Since October 2023, US commercial banks have bought only 15% of non-T-bill Treasury debt securities.2 That is no bueno for Yellen, as she needs the banks to step up as the Fed and foreigners exit stage left. I argue the banks would be happy to do their duty as long as they are buying T-bills, which have a similar risk profile to bank reserves but carry a higher yield.
+
+The Widow Maker
+The move from 160 to 142 dollar-yen currency pair sent shockwaves through the global financial markets. Many folks got the tap on the shoulder last week and were told to sell what they can. It was a textbook correlation one moment. Dollar-yen will reach 100, but the next wave will be driven by capital repatriation of Japan Inc.’s foreign assets and not just hedge fund muppets unwinding yen carry trades.3 They will sell US Treasuries and US equities (mostly big tech stocks like NVIDIA, Microsoft, Google, etc.).
+
+The BOJ tried to raise rates, and the global markets threw a fit. They caved and proclaimed rate hikes were off the table. From a fiat liquidity perspective, the worst case is that the yen trades sideways, and no net new positions are funded with cheap yen. With the threat of a yen carry trade unwind behind us, Bad Gurl Yellen’s market manipulations take centre stage once more.
+
+Dehydration
+
+Without water, you die. Without liquidity, you get rekt.
+
+Why have crypto risk markets traded sideways to down since April of this year? The majority of tax receipts occur in April, which necessitates lower borrowing by the Treasury. We can observe this in the number of T-bills issued between April and June.
+
+
+
+As a result of a net reduction in T-bills outstanding, liquidity was removed from the system. Even if the government borrows more overall, a net reduction in cash-like instruments provided by the Treasury removes liquidity from the market. Therefore, cash remains trapped on the Fed’s balance sheet, the RRP, unable to generate financial asset price growth.
+
+This chart of Bitcoin (gold) vs. RRP (white) clearly shows that from Jan – April, when T-bills were net issued, RRP fell, and Bitcoin pumped. From April to July, when T-bills were net withdrawn from the market, RRP rose, and Bitcoin traded sideways, punctuated with a few intense dips. I stopped on July 1st because I wanted to show the interaction before the dollar-yen strengthened from 162 to 142, which caused a general selloff in risky assets.
+
+
+
+
+Therefore, taking Bad Gurl Yellen’s word, we know that $301bn of T-bills will be net issued between now and year-end. If this relationship holds true, Bitcoin will quickly retrace the dump caused by the yen strengthening. The next stop for Bitcoin is $100,000. 
+
+Wen Alt Szn?
+Shitcoins are higher beta Bitcoin crypto plays. But during this cycle, Bitcoin and now Ether have structural bids in the form of net inflows into US-listed exchange-traded funds (ETF). While Bitcoin and Ether have corrected since April, they escaped the carnage experienced in the shitcoin markets. Alt szn will return only after Bitcoin and Ether decidedly break through $70,000 and $4,000, respectively. Solana will also climb over $250, but the crypto market-wide wealth effect of a Solana pump is nowhere near as potent as with Bitcoin and Ether, given the relative market caps. The combination of a dollar liquidity-inspired Bitcoin and Ether rally into year-end will create a strong foundation for the return of a sexy shitcoin soiree.
+
+Trading Setup
+As T-bills are issued and the buyback program operates in the background, liquidity conditions will improve. If Harris is wobbling and needs more firepower in the form of a rip-roaring stock market, Yellen will spend down the TGA. In any case, I expect that crypto will exit its sideways-to-downward trajectory starting in September. As such, I will take advantage of this late northern hemispheric summer weakness to load up on crypto risk.
+
+The US election occurs in early November. Yellen will be at peak manipulation in October. There will be no better time for liquidity this year. Therefore, I shall sell into strength. I will not liquidate my entire crypto portfolio but take profits in my more speculative momentum trades and park the capital into staked Ethena USD (sUSDe). The crypto market trades up, increasing the odds of a Trump victory. Trump’s probability of victory peaked right after the assassination attempt and Slow Joe’s disastrous debate performance, Kamala Harris is a first-class political muppet, but she is not an octogenarian vegetable. That’s all she needs to defeat Trump. The election is a coin toss, and I would rather watch the chaos from the sidelines and step back into the markets AFTER the US debt ceiling is raised. I expect that to happen sometime in January or February. 
+
+Once the US debt ceiling charade is over, liquidity will gush from the Treasury and possibly the Fed to get markets back on track. Then, the bull market will begin for realz. $1 million Bitcoin is still my base case. 
+
+P.S.: As soon as Bad Gurl Yellen and towel boy Powell combine forces, China will finally unleash its long-awaited Bazooka fiscal stimulus. The 2025 Sino-American crypto bull market shall be glorious. 
+
+Yachtzee!
+
+ 
+
+Footnotes
+This is the total of banking reserves held at the Fed and the RRP.
+From week ending 27 September 2023 until 17 July 2024, as per the H.8 Federal Reserve report, commercial banks bought $187.1bn worth of Treasury debt securities. I assume that over that same period MMFs bought 100% of all T-bills issued. Over the same time period the Treasury issued $1,778bn worth of debt securities other than T-bills. The banks’ share of that is 15%.
+Japan Inc. are Japanese insurance companies, pension funds, corporates, households, and the Bank of Japan.
