@@ -22,8 +22,10 @@ Your task is to provide a helpful, creative answer to the user's question while 
 Input:
 1. User's question: {question}
 2. Inspiration from previous responses: {context}
-3. Additional information: {search}
-4. Preferred language: {language}
+3. A list of tables you can look and update: {tables}
+4. The content of your chosen table: {activeTable}
+5. Additional information: {search}
+6. Preferred language: {language}
 
 Guidelines:
 1. Understand the user's question and the general theme from the inspiration and additional information.

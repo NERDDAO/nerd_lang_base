@@ -48,6 +48,8 @@ export type InvokeParams = {
   question: string,
   language: string,
   history: any,
+  tables?: any,
+  activeTable?: any,
   search?: string,
   persona?: string,
   format_instructions?: string
@@ -71,7 +73,66 @@ export type RunnableConf = {
   customContextual?: any;
   aiModel?: AiModel
 }
+// Daily activities log
+export interface DailyActivity {
+  id: string;
+  date: Date;
+  activity: string;
+  duration: number; // in minutes
+  category: string;
+  notes?: string;
+}
 
+// Research activities log
+export interface ResearchActivity {
+  id: string;
+  date: Date;
+  topic: string;
+  summary: string;
+  sources: string[];
+  key_findings: string[];
+  next_steps?: string;
+}
+
+// Game states
+export interface GameState {
+  id: string;
+  game_name: string;
+  player_id: string;
+  current_level: number;
+  score: number;
+  last_played: Date;
+  saved_state: object; // This could be a more specific type depending on your game structure
+}
+
+// Global shared table
+export interface GlobalEntry {
+  id: string;
+  key: string;
+  value: string | number | boolean | object;
+  last_updated: Date;
+  created_by: string;
+  visibility: 'public' | 'private' | 'group';
+}
+
+// Union type for all table types
+export type TableEntry = DailyActivity | ResearchActivity | GameState | GlobalEntry;
+
+// Enum for table names
+export enum TableName {
+  DAILY = 'DAILY',
+  RESEARCH = 'RESEARCH',
+  GAMES = 'GAMES',
+  GLOBAL = 'GLOBAL'
+}
+
+// Helper type to map table names to their respective entry types
+export type TableTypeMap = {
+  [TableName.DAILY]: DailyActivity;
+  [TableName.RESEARCH]: ResearchActivity;
+  [TableName.GAMES]: GameState;
+  [TableName.GLOBAL]: GlobalEntry;
+}
 export interface Activity {
   id: string
   name: string
