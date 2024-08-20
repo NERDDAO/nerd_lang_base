@@ -35,7 +35,8 @@ const aiflow = createAIFlow
             GLOBAL: Queries that may benefit from being broadcasted to the network
             SEARCH: Look for information outside your context
     `),
-			search:z.boolean().describe('search on the internet?')
+		search:z.boolean().describe('search on the internet?'),
+        haiku: z.string().describe('the semantic content of the query'),
     }), async (ctx, { flowDynamic, state, gotoFlow }) => {
         console.log(ctx?.schema)
         //flowDynamic("thinking")
@@ -48,11 +49,23 @@ const aiflow = createAIFlow
         }
     })
     .setContextLayer(
-        z.object({
-            inference: z.string().describe('the current query intention'),
-            haiku: z.string().describe('a haiku extracting the semantic content')
-						
-        }),
+    z.object({
+        inference: z.string().describe('the current query intention'),
+        haiku: z.string().describe('a haiku extracting the semantic content'),
+        entityExtraction: z.array(z.string()).describe('key entities mentioned in the query'),
+        topicClassification: z.array(z.string()).describe('relevant topics/categories'),
+        sentimentAnalysis: z.number().describe('sentiment score (-1 to 1)'),
+        urgencyLevel: z.number().min(1).max(10).describe('urgency level of the query'),
+        complexityScore: z.number().min(1).max(10).describe('estimated complexity of the query'),
+        requiredExpertise: z.array(z.string()).describe('domains or skills needed to answer'),
+        contextualKeywords: z.array(z.object({
+            keyword: z.string(),
+            relevance: z.number()
+        })).describe('important keywords with relevance scores'),
+        intentionConfidence: z.number().min(0).max(1).describe('confidence in detected intention'),
+        languageStyle: z.string().describe('linguistic style of the query'),
+        temporalContext: z.enum(['past', 'present', 'future']).describe('time focus of the query')
+    }),
         async (ctx) => {
             const { intention } = ctx.schema
             if (intention == 'SEARCH') {
@@ -111,6 +124,7 @@ const aiflow = createAIFlow
 
         return addAction(async (ctx, { endFlow, flowDynamic, state }) => {
             const response = state.get('answer')
+        console.log(response)
             const payload = {
                 time: Date.now(),
                 query: ctx.body,
@@ -168,7 +182,9 @@ const main = async () => {
     const PORT = process.env.PORT ?? 3008
     const adapterFlow = createFlow([aiflow])
 
-    const adapterProvider = createProvider(Provider)
+    const adapterProvider = createProvider(Provider,{
+        token:process.env.TELEGRAM_BOT_TOKEN
+    })
     adapterProvider.on('message', (ctx) => console.log('new message', ctx.body))
     const adapterDB = new Database()
 

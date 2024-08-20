@@ -72,7 +72,7 @@ class createAIFlow {
         const schema = opts?.answerSchema || z.object({ answer: z.string().describe('Answer as best possible') })
         const format_instructions = new StructuredOutputParser(schema).getFormatInstructions()
 
-        this.kwrd = this.kwrd.addAction(async (ctx, { state }) => {
+        this.kwrd = this.kwrd.addAction(async (ctx, { state, flowDynamic }) => {
             try {
                 if (ctx?.context && typeof ctx.context === 'object') {
                     ctx.context = Object.values(ctx.context).join(' ')
@@ -87,7 +87,11 @@ class createAIFlow {
                     mapContext,
                     {
                         question: ctx.body,
+                        persona:"Youre a coordination agent",
                         language: 'spanish',
+                        search: '',
+                        tables:"",
+                        activeTable:"",
                         history: await Memory.getMemory(state) || [],
                         format_instructions
                     },
@@ -96,14 +100,17 @@ class createAIFlow {
 
                 Memory.memory({ user: ctx.body, assistant: JSON.stringify(answer) }, state)
 
+                 console.log(answer, ctx.search)
+                const chunks = answer.answer.split(/\n\n+/);
+                for (const chunk of chunks) {
+                    await flowDynamic([{ body: chunk.trim() }]);
+                }
                 await state.update({ answer })
             } catch (error) {
                 callbacks?.onFailure && callbacks?.onFailure(error)
                 await state.update({ answer: null })
             }
-
         })
-        
         return this
     }
 
