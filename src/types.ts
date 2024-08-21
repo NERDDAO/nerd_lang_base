@@ -127,6 +127,23 @@ export enum TableName {
 }
 
 // Helper type to map table names to their respective entry types
+//
+export type Usertype = {
+  _id: { contract: string, id: number },
+  name: string,
+  image: string,
+  tgChats: number[],
+  owner: string
+}
+
+// Define the structure of the chat document
+export interface ChatType {
+  _id: number; // Chat ID
+  profileIds: {
+    contract: string;
+    id: number;
+  }[]; // Array of profile IDs subscribed to the chat
+}
 export type TableTypeMap = {
   [TableName.DAILY]: DailyActivity;
   [TableName.RESEARCH]: ResearchActivity;
